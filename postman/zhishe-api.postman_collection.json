@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "397e8f57-38c6-4b3e-a0bf-54cf52d0da12",
+		"name": "zhishe-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get club list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/clubs?page=0&limit=100",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"clubs"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"test4\",\n\t\"password\": \"123456\",\n\t\"nickname\": \"What\",\n\t\"avatarUrl\": \"http://b-ssl.duitang.com/uploads/item/201810/28/20181028170516_hnpsx.thumb.700_0.jpeg\",\n\t\"major\": \"SE\",\n\t\"email\": \"what@gmail.com\",\n\t\"phone\": \"137xxxxxxxx\",\n\t\"slogan\": \"good good study\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"test\",\n\t\"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/auth/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/auth/info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiY3JlYXRlZCI6MTU4NzM5MTc0NzQxNCwiZXhwIjoxNTg3OTk2NTQ3fQ.gfh-Wtvg4DlvUF3xS03YPXfEw8i_dv6R2goNB1CrvnhntSTdtm9zCrbGQ771YCMyLMt_ZVvGVZeXGgJDfKAE8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/auth/info",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/auth/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiY3JlYXRlZCI6MTU4NzM5MTc0NzQxNCwiZXhwIjoxNTg3OTk2NTQ3fQ.gfh-Wtvg4DlvUF3xS03YPXfEw8i_dv6R2goNB1CrvnhntSTdtm9zCrbGQ771YCMyLMt_ZVvGVZeXGgJDfKAE8A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/auth/users",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
