@@ -112,12 +112,6 @@ export default {
     $route: {
       handler: function(val, oldVal) {
         if (this.$isServer) return
-
-        if (this.isHome || this.isDonate) {
-          getCodefund('bottom-bar')
-        } else {
-          getCodefund()
-        }
       },
       immediate: true
     }
@@ -147,31 +141,6 @@ export default {
       } else {
         return 'en'
       }
-    },
-    adBlockDetected() {
-      const cn =
-        '检测到你使用了例如：AdBlock之类的广告屏蔽插件，请将本项目加入白名单中。因为广告收入对于一个开源项目来说真的很重要。拜托了🙏'
-      const en =
-        'It is detected that you have used an ad blocking plug-in such as AdBlock, etc. to replace this item and add it to the whitelist. Because advertising revenue is really important for an open source project. Please, 🙏'
-
-      Swal.fire({
-        title: this.checkLang() === 'cn' ? cn : en,
-        width: 600,
-        padding: '3em',
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        showConfirmButton: false,
-        backdrop: `
-            rgba(0,0,123,0.4)
-            url("${this.$withBase('/nyan-cat.gif')}")
-            left top
-            no-repeat`
-      })
-
-      this.sendGa(true)
-    },
-    adBlockNotDetected() {
-      this.sendGa(false)
     },
     sendGa(tag) {
       window.ga &&
