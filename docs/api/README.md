@@ -2,11 +2,11 @@
 sidebar: auto
 ---
 
-# 知社 API 文档（初稿）
+# 知社 API 文档
 
 本项目前后端接口规范和接口文档。
 
-> 本文的正在持续更新中，可能变动较大~
+> 本文的正在持续更新中~
 
 [TOC]
 
@@ -212,9 +212,9 @@ HTTP/1.1 403 Forbidden
 
 #### 1.4.2 自定义 Header
 
-访问受保护商场 API 采用自定义 `X-Zhishe-Token` 头部
+访问受保护 API 采用自定义 `Authorization` 头部
 
-1. 前端访问小商城后端登录 API`/user/login`
+1. 前端访问小商城后端登录 API`/auth/login`
 
    ```json
    POST /user/login
@@ -229,7 +229,8 @@ HTTP/1.1 403 Forbidden
 
    ```json
    {
-     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0aGlzIGlzIGxpdGVtYWxsIHRva2VuIiwiYXVkIjoiTUlOSUFQUCIsImlzcyI6IkxJVEVNQUxMIiwiZXhwIjoxNTU3MzI2ODUwLCJ1c2VySWQiOjEsImlhdCI6MTU1NzMxOTY1MH0.XP0TuhupV_ttQsCr1KTaPZVlTbVzVOcnq_K0kXdbri0"
+     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0aGlzIGlzIGxpdGVtYWxsIHRva2VuIiwiYXVkIjoiTUlOSUFQUCIsImlzcyI6IkxJVEVNQUxMIiwiZXhwIjoxNTU3MzI2ODUwLCJ1c2VySWQiOjEsImlhdCI6MTU1NzMxOTY1MH0.XP0TuhupV_ttQsCr1KTaPZVlTbVzVOcnq_K0kXdbri0",
+     "tokenHead": "Bearer"
    }
    ```
 
@@ -237,7 +238,7 @@ HTTP/1.1 403 Forbidden
 
    ```json
    GET http://localhost:8080/users
-   X-Zhishe-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0aGlzIGlzIGxpdGVtYWxsIHRva2VuIiwiYXVkIjoiTUlOSUFQUCIsImlzcyI6IkxJVEVNQUxMIiwiZXhwIjoxNTU3MzM2ODU0LCJ1c2VySWQiOjIsImlhdCI6MTU1NzMyOTY1NH0.JY1-cqOnmi-CVjFohZMqK2iAdAH4O6CKj0Cqd5tMF3M
+   Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0aGlzIGlzIGxpdGVtYWxsIHRva2VuIiwiYXVkIjoiTUlOSUFQUCIsImlzcyI6IkxJVEVNQUxMIiwiZXhwIjoxNTU3MzM2ODU0LCJ1c2VySWQiOjIsImlhdCI6MTU1NzMyOTY1NH0.JY1-cqOnmi-CVjFohZMqK2iAdAH4O6CKj0Cqd5tMF3M
    ```
 
 #### 1.4.3 双重权限验证 :warning:
@@ -286,7 +287,7 @@ API 服务涉及
 用户登录接口
 
 ```
-POST /user/login
+POST /auth/login
 ```
 
 #### Input
@@ -311,7 +312,7 @@ POST /user/login
 > token 放在请求头
 
 ```
-GET /user/info
+GET /auth/info
 ```
 
 #### Response
@@ -339,7 +340,7 @@ GET /user/info
 用户注册接口
 
 ```
-POST /users/register
+POST /auth/register
 ```
 
 #### Input
