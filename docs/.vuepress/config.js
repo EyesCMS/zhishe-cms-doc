@@ -7,7 +7,7 @@ var { genNav, getComponentSidebar, deepClone } = utils
 module.exports = {
   title: 'zhishe-cms-web',
   description: 'A magical cms web',
-  base: '/zhishe-cms-web-site/',
+  base: '/zhishe-cms-doc/',
   head: [
     [
       'link',
@@ -19,7 +19,7 @@ module.exports = {
   ],
   themeConfig: {
     repo: 'EyesCMS/zhishe-cms-web',
-    docsRepo: 'EyesCMS/zhishe-cms-web-site',
+    docsRepo: 'EyesCMS/zhishe-cms-doc',
     docsDir: 'docs',
     editLinks: true,
     sidebarDepth: 3,
