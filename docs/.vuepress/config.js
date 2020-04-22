@@ -161,11 +161,7 @@ module.exports = {
 function genEssentialsSidebar(type = '') {
   const mapArr = [
     '/guide/',
-    '/guide/essentials/permission.md',
-    '/guide/essentials/mock-api.md',
-    '/guide/essentials/import.md',
-    '/guide/essentials/deploy.md',
-    '/guide/essentials/env.md'
+    '/guide/essentials/git-message.md'
   ]
   return mapArr.map(i => {
     return type + i
