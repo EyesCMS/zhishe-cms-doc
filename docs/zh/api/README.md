@@ -214,7 +214,7 @@ HTTP/1.1 403 Forbidden
 
 访问受保护 API 采用自定义 `Authorization` 头部
 
-1. 前端访问小商城后端登录 API`/auth/login`
+1. 前端访问后端登录 API`/auth/login`
 
    ```json
    POST /user/login
@@ -1220,7 +1220,7 @@ Status: 204 No Content
 POST /clubs/activities
 ```
 
-### Input
+#### Input
 
 | Name            | Type       | Description |
 | --------------- | ---------- | ----------- |

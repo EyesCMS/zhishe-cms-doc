@@ -161,7 +161,8 @@ module.exports = {
 function genEssentialsSidebar(type = '') {
   const mapArr = [
     '/guide/',
-    '/guide/essentials/git-message.md'
+    '/guide/essentials/git-message.md',
+	'/guide/essentials/dev.md'
   ]
   return mapArr.map(i => {
     return type + i
