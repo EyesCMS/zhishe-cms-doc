@@ -21,7 +21,7 @@ Otherwise, you can use [vue-admin-template](https://github.com/PanJiaChen/vue-ad
 - Integrated Solution: [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 - Basic Template: [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
 
-​	:::
+:::
 
 <br/>
 
