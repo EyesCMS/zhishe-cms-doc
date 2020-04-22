@@ -4,7 +4,6 @@ pageClass: getting-started
 
 # Introduction
 
-
 [![Build Status](https://travis-ci.org/EyesCMS/zhishe-cms-web.svg?branch=master)](https://travis-ci.org/PanJiaChen/vue-element-admin)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/EyesCMS/zhishe-cms-web.svg)](https://github.com/EyesCMS/zhishe-cms-web/releases)
@@ -148,4 +147,22 @@ There may be some spelling or translation errors in the course of writing this d
 
 [zhishe-cms-web](https://github.com/EyesCMS/zhishe-cms-web) is also continuing to iterate, summarize and summarize more features, and summarize the best practices of product templates/components/business scenarios in the middle and back office. This project is also very much looking forward to your participation and [feedback](https://github.com/EyesCMS/zhishe-cms-web/issues).
 
+## References
 
+- [https://github.com/CaiBaoHong/biu](https://github.com/CaiBaoHong/biu ) 
+
+  管理后台项目开发脚手架，基于 vue-element-admin 和 springboot 搭建，前后端分离方式开发和部署
+
+- [https://github.com/macrozheng/mall](https://github.com/macrozheng/mall)
+
+  一套电商系统，包括前台商城系统及后台管理系统，基于 SpringBoot+MyBatis 实现
+
+- [https://github.com/macrozheng/mall-admin-web](https://github.com/macrozheng/mall-admin-web)
+
+  一个电商后台管理系统的前端项目，基于 Vue + Element 实现
+
+- [https://github.com/PanJiaChen/vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+
+  后台前端解决方案，它基于 [vue](https://github.com/vuejs/vue) 和 [element-ui](https://github.com/ElemeFE/element) 实现
+
+  
