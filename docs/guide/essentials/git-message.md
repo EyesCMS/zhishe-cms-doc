@@ -1,4 +1,4 @@
-### Git message 提交格式
+### Git message specification
 
 ```
 <type>(<scope>): <subject><BLANK LINE><body><BLANK LINE><footer>
