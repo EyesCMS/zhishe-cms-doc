@@ -639,7 +639,7 @@ POST /clubs/creations
 
 | Name            | Type      | Description                               |
 | --------------- | --------- | ----------------------------------------  |
-| `club_name`     | `integer` | 社团名称                                   |
+| `club_name`     | `string`  | 社团名称                                   |
 | `applicant`     | `string`  | 申请人                                     |
 | `reason`        | `string`  | 申请原因                                   |
 | `type`          | `string`  | 社团类型                                   |
@@ -720,6 +720,18 @@ PUT /clubs/creations/audit
 | ------- | --------- | ------------ |
 | `id`    | `integer` | 申请 ID      |
 | `state` | `integer` | 新的申请状态 |
+
+
+#### Example
+
+
+```json
+{
+  "id": 1,
+  "state": 1
+}
+```
+
 
 #### Response
 
