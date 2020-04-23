@@ -653,7 +653,7 @@ POST /clubs/creations
   "club_name": "test",
   "applicant": "张三",
   "reason": "make friends",
-  "type": 运动类,
+  "type": "运动类",
   "official_state":true,
   "accessory_url": "https://xxx/xxx/xx.doc"
 }
