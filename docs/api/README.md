@@ -637,13 +637,14 @@ POST /clubs/creations
 
 #### Input
 
-| Name            | Type      | Description                              |
-| --------------- | --------- | ---------------------------------------- |
-| `club_name`     | `integer` | 社团名称                                 |
-| `applicant`     | `string`  | 申请人                                   |
-| `reason`        | `string`  | 申请原因                                 |
-| `type`          | `int`     | 社团类型，0 -> 小团体，1 -> 官方认证社团 |
-| `accessory_url` | `string`  | 附件                                     |
+| Name            | Type      | Description                               |
+| --------------- | --------- | ----------------------------------------  |
+| `club_name`     | `integer` | 社团名称                                   |
+| `applicant`     | `string`  | 申请人                                     |
+| `reason`        | `string`  | 申请原因                                   |
+| `type`          | `string`  | 社团类型                                   |
+| `official_state`| `boolean` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
+| `accessory_url` | `string`  | 附件                                       |
 
 #### Example
 
@@ -652,7 +653,8 @@ POST /clubs/creations
   "club_name": "test",
   "applicant": "张三",
   "reason": "make friends",
-  "type": 0,
+  "type": 运动类,
+  "official_state":true,
   "accessory_url": "https://xxx/xxx/xx.doc"
 }
 ```
