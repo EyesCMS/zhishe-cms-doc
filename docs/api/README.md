@@ -757,6 +757,17 @@ POST /clubs/dissolutions
 | `reason`        | `string`  | 申请原因    |
 | `accessory_url` | `string`  | 附件链接    |
 
+#### Example
+
+```json
+{
+  "club_id": 10001,
+  "applicant": "张三",
+  "reason": "没为什么",
+  "accessory_url": "https://xxx/xxx/xx.doc"
+}
+```
+
 #### Response
 
 ```json
@@ -815,6 +826,18 @@ PUT /clubs/dissolutions/audit
 | ------- | --------- | ------------ |
 | `id`    | `integer` | 申请 ID      |
 | `state` | `integer` | 新的申请状态 |
+
+#### Example
+
+
+```json
+{
+  "id": 1,
+  "state": 1
+}
+```
+
+
 
 #### Response
 
