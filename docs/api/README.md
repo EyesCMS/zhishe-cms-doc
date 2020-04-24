@@ -862,7 +862,6 @@ POST /clubs/join
 
 | Name      | Type      | Description |
 | --------- | --------- | ----------- |
-| `user_id` | `integer` | 申请人 ID   |
 | `club_id` | `integer` | 社团 ID     |
 | `reason`  | `string`  | 申请原因    |
 
@@ -870,7 +869,6 @@ POST /clubs/join
 
 ```json
 {
-  "user_id": 10001,
   "club_id": 5000,
   "reason": "没为什么"
 }
