@@ -535,7 +535,10 @@ Status: 200 OK
   "name": "篮球社",
   "chief_id": 2,
   "chief_name": "微微笑",
-  "avatar_url": "http://xx/xxxx.png"
+  "avatar_url": "http://xx/xxxx.png",
+  "slogan": "XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团"，
+  "member_count": 500,
+  "qq_group": "312512512"
 }
 ```
 
