@@ -535,10 +535,7 @@ Status: 200 OK
   "name": "篮球社",
   "chief_id": 2,
   "chief_name": "微微笑",
-  "avatar_url": "http://xx/xxxx.png",
-  "slogan": "XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团"，
-  "member_count": 500,
-  "qq_group": "312512512"
+  "avatar_url": "http://xx/xxxx.png"
 }
 ```
 
@@ -566,8 +563,6 @@ Status: 200 OK
     "avatar_url": "https://xxx.com/images/xxxx.png"
   }
 ]
-
-total: 100
 ```
 
 #### Response if requester is not an club member(TODO)
@@ -750,7 +745,7 @@ Status: 204 No Content
 社长提交解散社团申请表单
 
 ```
-POST /clubs/dissolutions
+POST /clubs/dissolution
 ```
 
 #### Input
@@ -784,7 +779,7 @@ Status: 201 Created
 管理员可查看社团解散申请列表，以进行进一步的审核
 
 ```
-GET /clubs/dissolutions
+GET /clubs/dissolution
 ```
 
 #### Response
@@ -822,7 +817,7 @@ Status: 200 OK
 管理员审核某个社团解散申请
 
 ```
-PUT /clubs/dissolutions/audit
+PUT /clubs/dissolution/audit
 ```
 
 #### Input
@@ -862,17 +857,9 @@ POST /clubs/join
 
 | Name      | Type      | Description |
 | --------- | --------- | ----------- |
+| `user_id` | `integer` | 申请人 ID   |
 | `club_id` | `integer` | 社团 ID     |
 | `reason`  | `string`  | 申请原因    |
-
-#### Example
-
-```json
-{
-  "club_id": 5000,
-  "reason": "没为什么"
-}
-```
 
 #### Response
 
@@ -929,17 +916,6 @@ PUT /clubs/joins/audit
 | ------- | --------- | ------------ |
 | `id`    | `integer` | 申请 ID      |
 | `state` | `integer` | 新的申请状态 |
-
-#### Example
-
-
-```json
-{
-  "id": 1,
-  "state": 1
-}
-```
-
 
 #### Response
 
@@ -1206,14 +1182,12 @@ Status: 200 OK
 
 [
   {
-    "id": 2,
     "title": "公告1",
     "content": "这是内容",
     "create_at": "2018-04-19 18:14:12",
     "update_at": "2018-04-19 19:14:12"
   }
 ]
-total: 100
 ```
 
 ### 5.3 查看公告详情
@@ -1469,26 +1443,6 @@ Status: 204 No Content
 ### 7.4 修改帖子
 
 # TODO
-
-
-### 7.5 获取某一社团的帖子列表
-```
-GET /forum/:clubId/posts
-```
-
-#### Response
-
-```json
-Status: 200 OK
-
-[
-  {
-    "id": 1
-    "title": "活动1",
-    "content": "这是内容",
-    "create_at": "2018-04-19 18:14:12"
-  }
-]
 
 ## 8 活动评论
 
