@@ -866,6 +866,16 @@ POST /clubs/join
 | `club_id` | `integer` | 社团 ID     |
 | `reason`  | `string`  | 申请原因    |
 
+#### Example
+
+```json
+{
+  "user_id": 10001,
+  "club_id": 5000,
+  "reason": "没为什么"
+}
+```
+
 #### Response
 
 ```json
@@ -921,6 +931,17 @@ PUT /clubs/joins/audit
 | ------- | --------- | ------------ |
 | `id`    | `integer` | 申请 ID      |
 | `state` | `integer` | 新的申请状态 |
+
+#### Example
+
+
+```json
+{
+  "id": 1,
+  "state": 1
+}
+```
+
 
 #### Response
 
