@@ -566,6 +566,8 @@ Status: 200 OK
     "avatar_url": "https://xxx.com/images/xxxx.png"
   }
 ]
+
+total: 100
 ```
 
 #### Response if requester is not an club member(TODO)
