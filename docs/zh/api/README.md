@@ -491,6 +491,7 @@ Status: 200 OK
     "avatar_url": "http://xx/xxxx.png"
   }
 ]
+total: 100
 ```
 
 ### 3.3 按名称关键字查找社团
