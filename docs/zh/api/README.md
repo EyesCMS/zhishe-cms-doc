@@ -759,7 +759,7 @@ Status: 204 No Content
 ### 4.4 提交解散社团申请
 社长提交解散社团申请表单
 ```
-POST /clubs/dissolutions
+POST /clubs/dissolution
 ```
 #### Input
 | Name            | Type      | Description |
@@ -784,7 +784,7 @@ Status: 201 Created
 ### 4.5 社团解散申请列表
 管理员可查看社团解散申请列表，以进行进一步的审核
 ```
-GET /clubs/dissolutions
+GET /clubs/dissolution
 ```
 #### Response
 ```json
@@ -816,7 +816,7 @@ Status: 200 OK
 ### 4.6 审核社团解散申请
 管理员审核某个社团解散申请
 ```
-PUT /clubs/dissolutions/audit
+PUT /clubs/dissolution/audit
 ```
 #### Input
 | Name    | Type      | Description  |
