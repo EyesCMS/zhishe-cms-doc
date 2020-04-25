@@ -537,6 +537,51 @@ Status: 200 OK
 }
 ```
 
+### 3.4 查看学生加入社团申请
+
+根据学生用户 ID 查找加入社团申请信息
+
+```
+GET /clubs/join/:id
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+{
+  "user_id": 221701XXX,
+  "club_id": 1,
+  "club_name": 篮球社,
+  "reason": "这是申请原因申请原因申请原因",
+  "state": "pending"
+}
+```
+
+### 3.4 查看学生创建社团申请
+
+根据学生用户 ID 查找社团申请信息
+
+```
+GET /clubs/creations/:id
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+{
+    "club_name": "羽毛球社",
+    "create_at": "2018-04-19 18:14:12",
+    "applicant": "张三",
+    "reason": "交朋友",
+    "accessory_url": "http://xxx/xxx/xx.doc",
+    "state": "pending"
+}
+```
+
 ### 3.2 社团成员列表
 
 列出所有社团成员
