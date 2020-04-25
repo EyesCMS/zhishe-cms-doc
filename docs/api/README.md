@@ -353,19 +353,27 @@ POST /auth/register
 | `major`    | `string` | 专业        |
 | `phone`    | `string` | 联系方式    |
 | `address`  | `string` | 宿舍地址    |
+| `qusetion` | `string` | 保密问题    |
+| `answer`   | `string` | 保密回答    |
 
-#### Response
+#### Response if user no exit
 
 ```json
 Status: 201 Created
 ```
 
+#### Response if user exit
+
+```json
+Status: 409 already exit
+```
+
 ### 2.4 通过密保问题找回密码
 
-根据用户 ID 获取密保问题
+根据用户名获取密保问题
 
 ```
-GET /users/:uid/question
+GET /users/:username/question
 ```
 
 #### Response
@@ -378,20 +386,26 @@ Status: 200 OK
 }
 ```
 
+#### Response if quest no found
+
+```json
+Status: 404 No Found
+```
+
 ### 2.5 校验密保问题
 
 校验密保问题回答是否正确
 
 ```
-POST /users/:uid/anwser
+POST /users/:username/anwser
 ```
 
 #### Input
 
-| Name     | Type     | Description    |
-| -------- | -------- | -------------- |
-| `uid`    | `string` | 用户 ID        |
-| `anwser` | `string` | 待校验密保答案 |
+| Name       | Type     | Description    |
+| ---------- | -------- | -------------- |
+| `username` | `string` | 用户用户名     |
+| `anwser`   | `string` | 待校验密保答案 |
 
 #### Response if answer is correct
 
@@ -643,14 +657,14 @@ POST /clubs/creations
 
 #### Input
 
-| Name            | Type      | Description                               |
-| --------------- | --------- | ----------------------------------------  |
-| `club_name`     | `string`  | 社团名称                                   |
-| `applicant`     | `string`  | 申请人                                     |
-| `reason`        | `string`  | 申请原因                                   |
-| `type`          | `string`  | 社团类型                                   |
-| `official_state`| `boolean` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
-| `accessory_url` | `string`  | 附件                                       |
+| Name             | Type      | Description                                  |
+| ---------------- | --------- | -------------------------------------------- |
+| `club_name`      | `string`  | 社团名称                                     |
+| `applicant`      | `string`  | 申请人                                       |
+| `reason`         | `string`  | 申请原因                                     |
+| `type`           | `string`  | 社团类型                                     |
+| `official_state` | `boolean` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
+| `accessory_url`  | `string`  | 附件                                         |
 
 #### Example
 
@@ -660,7 +674,7 @@ POST /clubs/creations
   "applicant": "张三",
   "reason": "make friends",
   "type": "运动类",
-  "official_state":true,
+  "official_state": true,
   "accessory_url": "https://xxx/xxx/xx.doc"
 }
 ```
@@ -727,9 +741,7 @@ PUT /clubs/creations/audit
 | `id`    | `integer` | 申请 ID      |
 | `state` | `integer` | 新的申请状态 |
 
-
 #### Example
-
 
 ```json
 {
@@ -737,7 +749,6 @@ PUT /clubs/creations/audit
   "state": 1
 }
 ```
-
 
 #### Response
 
@@ -834,15 +845,12 @@ PUT /clubs/dissolutions/audit
 
 #### Example
 
-
 ```json
 {
   "id": 1,
   "state": 1
 }
 ```
-
-
 
 #### Response
 
@@ -1451,8 +1459,8 @@ Status: 204 No Content
 
 # TODO
 
-
 ### 7.5 获取某一社团的帖子列表
+
 ```
 GET /forum/:clubId/posts
 ```
@@ -1476,11 +1484,11 @@ Status: 200 OK
 ### 8.1 发表评论
 
 对某一活动帖子发表评论
-
 ```
+
 POST /forum/posts/:id/remarks
-```
 
+````
 #### Input
 
 | Name      | Type      | Description |
@@ -1497,7 +1505,7 @@ POST /forum/posts/:id/remarks
   "pid": 33,
   "content": "3 days later"
 }
-```
+````
 
 #### Response
 
