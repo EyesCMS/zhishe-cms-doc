@@ -1357,6 +1357,7 @@ Status: 200 OK
 
 [
   {
+    "id": 1,
     "title": "活动1",
     "content": "这是内容",
     "club_name" "文学社",
@@ -1365,6 +1366,7 @@ Status: 200 OK
     "avator_url": "e312312312312.jpg"
   }
 ]
+total: 100
 ```
 
 ### 7.2 查看某一帖子
