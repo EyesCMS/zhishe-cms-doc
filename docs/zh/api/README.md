@@ -1359,6 +1359,7 @@ Status: 200 OK
   {
     "title": "活动1",
     "content": "这是内容",
+    "club_name" "文学社",
     "create_at": "2018-04-19 18:14:12",
     "img_url": "131231241241.jpg",
     "avator_url": "e312312312312.jpg"
