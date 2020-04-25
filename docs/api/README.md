@@ -1498,10 +1498,13 @@ Status: 200 OK
     "id": 1
     "title": "活动1",
     "content": "这是内容",
+    "club_name": 'XX社',
+    "img_url": '131231241241.jpg',
+    "avator_url": 'e312312312312.jpg'
     "create_at": "2018-04-19 18:14:12"
   }
 ]
-
+total: 100
 =======
 >>>>>>> a87021bb9c9487bdf5c9b438c1ec305735df7d35
 ## 8 活动评论
