@@ -633,54 +633,42 @@ Status: 204 No Content
 | 2          | rejected，审核被拒绝 |
 
 ### 4.1 提交创建社团申请表单
-
 普通学生提交社团创建申请表单
-
 ```
 POST /clubs/creations
 ```
-
 #### Input
-
-| Name            | Type      | Description                              |
-| --------------- | --------- | ---------------------------------------- |
-| `club_name`     | `integer` | 社团名称                                 |
-| `applicant`     | `string`  | 申请人                                   |
-| `reason`        | `string`  | 申请原因                                 |
-| `type`          | `int`     | 社团类型，0 -> 小团体，1 -> 官方认证社团 |
-| `accessory_url` | `string`  | 附件                                     |
-
+| Name            | Type      | Description                               |
+| --------------- | --------- | ----------------------------------------  |
+| `club_name`     | `string`  | 社团名称                                   |
+| `applicant`     | `string`  | 申请人                                     |
+| `reason`        | `string`  | 申请原因                                   |
+| `type`          | `string`  | 社团类型                                   |
+| `official_state`| `boolean` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
+| `accessory_url` | `string`  | 附件                                       |
 #### Example
-
 ```json
 {
   "club_name": "test",
   "applicant": "张三",
   "reason": "make friends",
-  "type": 0,
+  "type": "运动类",
+  "official_state":true,
   "accessory_url": "https://xxx/xxx/xx.doc"
 }
 ```
-
 #### Response
-
 ```json
 Status: 201 Created
 ```
-
 ### 4.2 社团创建申请列表
-
 管理员可查看社团创建申请列表，以进行进一步的审核
-
 ```
 GET /clubs/creations
 ```
-
 #### Response
-
 ```json
 Status: 200 OK
-
 [
   {
     "club_name": "羽毛球社",
@@ -708,64 +696,60 @@ Status: 200 OK
   },
 ]
 ```
-
 ### 4.3 审核创建社团申请
-
 管理员审核某个社团创建申请
-
 ```
 PUT /clubs/creations/audit
 ```
-
 #### Input
-
 | Name    | Type      | Description  |
 | ------- | --------- | ------------ |
 | `id`    | `integer` | 申请 ID      |
 | `state` | `integer` | 新的申请状态 |
-
+#### Example
+```json
+{
+  "id": 1,
+  "state": 1
+}
+```
 #### Response
-
 ```json
 Status: 204 No Content
 ```
-
 ### 4.4 提交解散社团申请
-
 社长提交解散社团申请表单
-
 ```
 POST /clubs/dissolutions
 ```
-
 #### Input
-
 | Name            | Type      | Description |
 | --------------- | --------- | ----------- |
 | `club_id`       | `integer` | 社团 ID     |
 | `applicant`     | `string`  | 申请人      |
 | `reason`        | `string`  | 申请原因    |
 | `accessory_url` | `string`  | 附件链接    |
-
+#### Example
+```json
+{
+  "club_id": 10001,
+  "applicant": "张三",
+  "reason": "没为什么",
+  "accessory_url": "https://xxx/xxx/xx.doc"
+}
+```
 #### Response
-
 ```json
 Status: 201 Created
 ```
-
 ### 4.5 社团解散申请列表
-
 管理员可查看社团解散申请列表，以进行进一步的审核
-
 ```
 GET /clubs/dissolutions
 ```
-
 #### Response
-
 ```json
 Status: 200 OK
-
 [
   {
     "club_name": "羽毛球社",
@@ -790,36 +774,32 @@ Status: 200 OK
   }
 ]
 ```
-
 ### 4.6 审核社团解散申请
-
 管理员审核某个社团解散申请
-
 ```
 PUT /clubs/dissolutions/audit
 ```
-
 #### Input
-
 | Name    | Type      | Description  |
 | ------- | --------- | ------------ |
 | `id`    | `integer` | 申请 ID      |
 | `state` | `integer` | 新的申请状态 |
-
+#### Example
+```json
+{
+  "id": 1,
+  "state": 1
+}
+```
 #### Response
-
 ```json
 Status: 204 No Content
 ```
-
 ### 4.7 学生提交入社申请
-
 普通学生提交加入社团申请表单
-
 ```
 POST /clubs/join
 ```
-
 #### Input
 
 | Name      | Type      | Description |
@@ -828,8 +808,16 @@ POST /clubs/join
 | `club_id` | `integer` | 社团 ID     |
 | `reason`  | `string`  | 申请原因    |
 
-#### Response
+#### Example
 
+```json
+{
+  "user_id": 10001,
+  "club_id": 5000,
+  "reason": "没为什么"
+}
+```
+#### Response
 ```json
 Status: 201 Created
 ```
