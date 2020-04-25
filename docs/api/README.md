@@ -468,15 +468,16 @@ Status: 204 No Content
 忘记密码时通过回答保密问题修改密码
 
 ```
-POST /users/changepassword
+POST /users/password
 ```
 
 #### Input
 
-| Name       | Type     | Description |
-| ---------- | -------- | ----------- |
-| `username` | `string` | 用户用户名  |
-| `password` | `string` | 修改的密码  |
+| Name       | Type     | Description    |
+| ---------- | -------- | -------------- |
+| `username` | `string` | 用户用户名     |
+| `password` | `string` | 修改的密码     |
+| `answer`   | `string` | 保密密码的答案 |
 
 #### Response
 
