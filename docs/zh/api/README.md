@@ -75,19 +75,13 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-响应成功，body 直接返回 JSON 格式的内容：
+响应成功，body 直接返回 JSON 格式的内容（返回列表时按  1.1.2 分页）：
 
 ```json
-[
-  {
-    "id": 1,
-    "state": "open"
-  },
-  {
-    "id": 2,
-    "state": "open"
-  }
-]
+{
+  age: 12,
+  name: "zhangsan"
+}
 ```
 
 #### 1.2.1 失败异常
