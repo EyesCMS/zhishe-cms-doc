@@ -373,8 +373,14 @@ Status: 409 already exit
 根据用户名获取密保问题
 
 ```
-GET /users/:username/question
+GET /users/question
 ```
+
+#### Input
+
+| Name       | Type     | Description |
+| ---------- | -------- | ----------- |
+| `username` | `string` | 用户用户名  |
 
 #### Response
 
@@ -397,7 +403,7 @@ Status: 404 No Found
 校验密保问题回答是否正确
 
 ```
-POST /users/:username/anwser
+POST /users/anwser
 ```
 
 #### Input
@@ -455,6 +461,27 @@ PUT /user/info
 
 ```json
 Status: 204 No Content
+```
+
+### 2.7 修改密码问题
+
+忘记密码时通过回答保密问题修改密码
+
+```
+POST /users/changepassword
+```
+
+#### Input
+
+| Name       | Type     | Description |
+| ---------- | -------- | ----------- |
+| `username` | `string` | 用户用户名  |
+| `password` | `string` | 修改的密码  |
+
+#### Response
+
+```json
+Status: 200 ok
 ```
 
 ## 3 社团管理 :two_men_holding_hands:
@@ -549,10 +576,7 @@ Status: 200 OK
   "name": "篮球社",
   "chief_id": 2,
   "chief_name": "微微笑",
-  "avatar_url": "http://xx/xxxx.png",
-  "slogan": "XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团"，
-  "member_count": 500,
-  "qq_group": "312512512"
+  "avatar_url": "http://xx/xxxx.png"
 }
 ```
 
@@ -580,8 +604,6 @@ Status: 200 OK
     "avatar_url": "https://xxx.com/images/xxxx.png"
   }
 ]
-
-total: 100
 ```
 
 #### Response if requester is not an club member(TODO)
@@ -761,7 +783,7 @@ Status: 204 No Content
 社长提交解散社团申请表单
 
 ```
-POST /clubs/dissolutions
+POST /clubs/dissolution
 ```
 
 #### Input
@@ -795,7 +817,7 @@ Status: 201 Created
 管理员可查看社团解散申请列表，以进行进一步的审核
 
 ```
-GET /clubs/dissolutions
+GET /clubs/dissolution
 ```
 
 #### Response
@@ -833,7 +855,7 @@ Status: 200 OK
 管理员审核某个社团解散申请
 
 ```
-PUT /clubs/dissolutions/audit
+PUT /clubs/dissolution/audit
 ```
 
 #### Input
@@ -1195,14 +1217,12 @@ Status: 200 OK
 
 [
   {
-    "id": 2,
     "title": "公告1",
     "content": "这是内容",
     "create_at": "2018-04-19 18:14:12",
     "update_at": "2018-04-19 19:14:12"
   }
 ]
-total: 100
 ```
 
 ### 5.3 查看公告详情
@@ -1459,6 +1479,8 @@ Status: 204 No Content
 
 # TODO
 
+<<<<<<< HEAD
+
 ### 7.5 获取某一社团的帖子列表
 
 ```
@@ -1479,6 +1501,8 @@ Status: 200 OK
   }
 ]
 
+=======
+>>>>>>> a87021bb9c9487bdf5c9b438c1ec305735df7d35
 ## 8 活动评论
 
 ### 8.1 发表评论
