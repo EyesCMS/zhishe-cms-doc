@@ -1357,11 +1357,16 @@ Status: 200 OK
 
 [
   {
+    "id": 1,
     "title": "活动1",
     "content": "这是内容",
-    "create_at": "2018-04-19 18:14:12"
+    "club_name" "文学社",
+    "create_at": "2018-04-19 18:14:12",
+    "img_url": "131231241241.jpg",
+    "avator_url": "e312312312312.jpg"
   }
 ]
+total: 100
 ```
 
 ### 7.2 查看某一帖子
@@ -1413,7 +1418,7 @@ Status: 204 No Content
 
 # TODO
 
-### 7.5  获取某一社团的帖子列表
+### 7.5 获取某一社团的帖子列表
 
 ```
 GET /forum/:clubId/posts

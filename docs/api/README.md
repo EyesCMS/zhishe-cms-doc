@@ -7,5 +7,3 @@ sidebar: auto
 本项目前后端接口规范和接口文档。
 
 > 本文的正在持续更新中~
-
-请查看 [https://eyescms.github.io/zhishe-cms-doc/zh/api/](https://eyescms.github.io/zhishe-cms-doc/zh/api/)
