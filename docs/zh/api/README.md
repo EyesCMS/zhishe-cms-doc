@@ -512,6 +512,30 @@ Status: 200 OK
 ]
 total: 100
 ```
+### 3.2 查看学生管理的社团列表
+
+列出学生管理的所有社团，即作为社长的社团列表
+
+```
+GET /clubs/manager/:userid
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+[
+  {
+    "cid": 1,
+    "name": "篮球社",
+    "chief_id": 2,
+    "chief_name": "微微笑",
+    "avatar_url": "http://xx/xxxx.png"
+  }
+]
+total: 100
+```
 
 ### 3.3 按名称关键字查找社团
 
