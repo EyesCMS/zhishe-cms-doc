@@ -308,19 +308,17 @@ GET /auth/info
 
 ```json
 {
-  "userId": 1,
-  "role": "admin",
-  "permissions": [
-    "article:list",
-    "article:add",
-    "article:update",
-    "article:delete"
-  ],
-  "major": "软件工程",
-  "email": "xxx@gmail.com",
-  "phone": "12345678901",
-  "slogan": "good good study, day day up",
-  "avatar_url": "https://xxx/xxx/avatar.png"
+    "userid": 10088,
+    "avatar": "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+    "username": "test",
+    "nickname": "Bob",
+    "major": "software",
+    "email": "bob@gmail.com",
+    "slogan": "good good study, day day up",
+    "phone": "12345678901",
+    "roles": [
+        "normal"
+    ]
 }
 ```
 
