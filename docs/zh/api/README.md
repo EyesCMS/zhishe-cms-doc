@@ -493,7 +493,7 @@ total: 100
 列出学生加入的所有社团
 
 ```
-GET /clubs/:userid
+GET /clubs/users/:userid
 ```
 
 #### Response
