@@ -879,22 +879,25 @@ Status: 200 OK
 
 [
   {
+    "id": 1,
     "applicant": "wangs",
     "reason": "锻炼自己",
     "createAt": "2018-04-19 18:14:12",
-    "state": "pending"
+    "state": 0
   },
   {
+    "id": 2,
     "applicant": "li",
     "reason": "锻炼自己",
     "createAt": "2018-04-19 18:14:12",
-    "state": "active"
+    "state": 1
   },
   {
+    "id": 3,
     "applicant": "zhao",
     "reason": "锻炼自己",
     "createAt": "2018-04-19 18:14:12",
-    "state": "rejected"
+    "state": 2
   }
 ]
 ```
