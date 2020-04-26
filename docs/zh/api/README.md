@@ -160,7 +160,7 @@ Content-Type: application/json;charset=UTF-8
 HTTP/1.1 401 Unauthorized
 
 {
-  "message": "Bad credentials"
+  "message": "Full authentication is required to access this resource"
 }
 ```
 
@@ -170,7 +170,7 @@ HTTP/1.1 401 Unauthorized
 HTTP/1.1 403 Forbidden
 
 {
-  "message": "权限不足"
+  "message": "Access is denied"
 }
 ```
 
@@ -267,12 +267,7 @@ xx 接口简单描述
 
 ```
 
-### 1.7 API 预览（TODO）
 
-API 服务涉及
-
-- 用户服务
-- 首页服务
 
 ## 2 用户服务 :hear_no_evil:
 
@@ -436,6 +431,24 @@ PUT /user/info
 ```json
 Status: 204 No Content
 ```
+
+
+
+### 2.7 切换角色
+
+用户点击某个社团后，传递当前社团 ID 给后端，后端根据社团 ID 设置当前用户角色
+
+```
+POST /roles/swtich
+```
+
+#### Response
+
+```json
+Status: 204 No Content
+```
+
+
 
 ## 3 社团管理 :two_men_holding_hands:
 
