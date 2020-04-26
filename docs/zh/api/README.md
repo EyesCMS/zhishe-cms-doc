@@ -665,6 +665,8 @@ Status: 204 No Content
 
 这里先统一定义一下申请状态（state）：
 
+注意：**后端只返回申请状态码，前端需要自行映射！**
+
 | 申请状态码 | 描述                 |
 | ---------- | -------------------- |
 | 0          | pending，未审核      |
@@ -688,12 +690,12 @@ POST /clubs/creations
 #### Example
 ```json
 {
-  "club_name": "test",
+  "clubName": "test",
   "applicant": "张三",
   "reason": "make friends",
   "type": "运动类",
-  "official_state":true,
-  "accessory_url": "https://xxx/xxx/xx.doc"
+  "officialState":true,
+  "accessoryUrl": "https://xxx/xxx/xx.doc"
 }
 ```
 #### Response
@@ -762,19 +764,20 @@ Status: 204 No Content
 POST /clubs/dissolution
 ```
 #### Input
-| Name            | Type      | Description |
-| --------------- | --------- | ----------- |
-| `club_id`       | `integer` | 社团 ID     |
-| `applicant`     | `string`  | 申请人      |
-| `reason`        | `string`  | 申请原因    |
-| `accessory_url` | `string`  | 附件链接    |
+| Name           | Type      | Description |
+| -------------- | --------- | ----------- |
+| `clubId`       | `integer` | 社团 ID     |
+| `applicant`    | `string`  | 申请人      |
+| `reason`       | `string`  | 申请原因    |
+| `accessoryUrl` | `string`  | 附件链接    |
 #### Example
+
 ```json
 {
-  "club_id": 10001,
+  "clubId": 10001,
   "applicant": "张三",
   "reason": "没为什么",
-  "accessory_url": "https://xxx/xxx/xx.doc"
+  "accessoryUrl": "https://xxx/xxx/xx.doc"
 }
 ```
 #### Response
@@ -792,21 +795,21 @@ Status: 200 OK
 [
   {
     "club_name": "羽毛球社",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "本社团没有存在意义",
     "state": "pending"
   },
   {
     "club_name": "足球社",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "好无聊啊",
     "state": "active"
   },
   {
     "club_name": "羽毛球社",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "无",
     "state": "rejected"
@@ -841,18 +844,18 @@ POST /clubs/join
 ```
 #### Input
 
-| Name      | Type      | Description |
-| --------- | --------- | ----------- |
-| `user_id` | `integer` | 申请人 ID   |
-| `club_id` | `integer` | 社团 ID     |
-| `reason`  | `string`  | 申请原因    |
+| Name     | Type      | Description |
+| -------- | --------- | ----------- |
+| `userId` | `integer` | 申请人 ID   |
+| `clubId` | `integer` | 社团 ID     |
+| `reason` | `string`  | 申请原因    |
 
 #### Example
 
 ```json
 {
-  "user_id": 10001,
-  "club_id": 5000,
+  "userId": 10001,
+  "clubId": 5000,
   "reason": "没为什么"
 }
 ```
@@ -878,19 +881,19 @@ Status: 200 OK
   {
     "applicant": "wangs",
     "reason": "锻炼自己",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "state": "pending"
   },
   {
     "applicant": "li",
     "reason": "锻炼自己",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "state": "active"
   },
   {
     "applicant": "zhao",
     "reason": "锻炼自己",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "state": "rejected"
   }
 ]
@@ -927,11 +930,11 @@ POST /clubs/quit
 
 #### Input
 
-| Name      | Type      | Description |
-| --------- | --------- | ----------- |
-| `user_id` | `integer` | 申请人 ID   |
-| `club_id` | `integer` | 社团 ID     |
-| `reason`  | `string`  | 申请原因    |
+| Name     | Type      | Description |
+| -------- | --------- | ----------- |
+| `userId` | `integer` | 申请人 ID   |
+| `clubId` | `integer` | 社团 ID     |
+| `reason` | `string`  | 申请原因    |
 
 #### Response
 
@@ -956,17 +959,17 @@ Status: 200 OK
   {
     "applicant": "wangs",
     "reason": "want to go",
-    "create_at": "2018-04-19 18:14:12"
+    "createAt": "2018-04-19 18:14:12"
   },
   {
     "applicant": "li",
     "reason": "want to go",
-    "create_at": "2018-04-19 18:14:12"
+    "createAt": "2018-04-19 18:14:12"
   },
   {
     "applicant": "zhao",
     "reason": "want to go",
-    "create_at": "2018-04-19 18:14:12"
+    "createAt": "2018-04-19 18:14:12"
   }
 ]
 ```
@@ -981,12 +984,12 @@ POST /clubs/leader/change
 
 #### Input
 
-| Name           | Type      | Description |
-| -------------- | --------- | ----------- |
-| `club_id`      | `integer` | 社团 ID     |
-| `old_chief_id` | `integer` | 旧社长 ID   |
-| `new_chief_id` | `integer` | 新社长 ID   |
-| `reason`       | `string`  | 申请原因    |
+| Name         | Type      | Description |
+| ------------ | --------- | ----------- |
+| `club_id`    | `integer` | 社团 ID     |
+| `oldChiefId` | `integer` | 旧社长 ID   |
+| `newChiefId` | `integer` | 新社长 ID   |
+| `reason`     | `string`  | 申请原因    |
 
 #### Response
 
@@ -1010,16 +1013,16 @@ Status: 200 OK
 [
   {
     "club_name": "wangs",
-    "old_chief_name": "want",
-    "new_chief_name": "zhang",
+    "oldChiefName": "want",
+    "newChiefName": "zhang",
     "create_at": "2018-04-19 18:14:12",
     "state": "pending"
   },
   {
-    "club_name": "wangs",
-    "old_chief_name": "want",
-    "new_chief_name": "zhang",
-    "create_at": "2018-04-19 18:14:12",
+    "clubName": "wangs",
+    "oldChiefName": "want",
+    "newChiefName": "zhang",
+    "createAt": "2018-04-19 18:14:12",
     "state": "rejected"
   }
 ]
@@ -1056,19 +1059,19 @@ POST /clubs/certifications
 
 #### Input
 
-| Name            | Type      | Description |
-| --------------- | --------- | ----------- |
-| `club_id`       | `integer` | 社团 ID     |
-| `applicant`     | `string`  | 申请人      |
-| `accessory_url` | `string`  | 附件        |
+| Name           | Type      | Description |
+| -------------- | --------- | ----------- |
+| `clubId`       | `integer` | 社团 ID     |
+| `applicant`    | `string`  | 申请人      |
+| `accessoryUrl` | `string`  | 附件        |
 
 #### Example
 
 ```json
 {
-  "club_id": 1,
+  "clubId": 1,
   "applicant": "wangping",
-  "accessory_url": "htttps://xxx/xxx.doc"
+  "accessoryUrl": "htttps://xxx/xxx.doc"
 }
 ```
 
@@ -1093,17 +1096,17 @@ Status: 200 OK
 
 [
   {
-    "club_name": "羽毛球社",
+    "clubName": "羽毛球社",
     "applicant": "张三",
-    "accessory_url": "http://xxx/xxx/xx.doc",
-    "create_at": "2018-04-19 18:14:12",
+    "accessoryUrl": "http://xxx/xxx/xx.doc",
+    "createAt": "2018-04-19 18:14:12",
     "state": "pending"
   },
   {
-    "club_name": "羽毛球社",
+    "clubName": "羽毛球社",
     "applicant": "张三",
-    "accessory_url": "http://xxx/xxx/xx.doc",
-    "create_at": "2018-04-19 18:14:12",
+    "accessoryUrl": "http://xxx/xxx/xx.doc",
+    "createAt": "2018-04-19 18:14:12",
     "state": "rejected"
   }
 ]
@@ -1179,8 +1182,8 @@ Status: 200 OK
     "id": 2,
     "title": "公告1",
     "content": "这是内容",
-    "create_at": "2018-04-19 18:14:12",
-    "update_at": "2018-04-19 19:14:12"
+    "createAt": "2018-04-19 18:14:12",
+    "updateAt": "2018-04-19 19:14:12"
   }
 ]
 total: 100
@@ -1200,8 +1203,8 @@ Status: 200 OK
 {
   "title": "公告1",
   "content": "这是内容",
-  "create_at": "2018-04-19 18:14:12",
-  "update_at": "2018-04-19 19:14:12"
+  "createAt": "2018-04-19 18:14:12",
+  "updateAt": "2018-04-19 19:14:12"
 }
 ```
 
@@ -1256,29 +1259,29 @@ POST /clubs/activities
 
 #### Input
 
-| Name            | Type       | Description |
-| --------------- | ---------- | ----------- |
-| `club_id`       | `int`      | 社团编号    |
-| `name`          | `string`   | 活动名称    |
-| `title`         | `string`   | 活动标题    |
-| `content`       | `string`   | 活动内容    |
-| `start_date`    | `datetime` | 开始时间    |
-| `end_date`      | `datetime` | 结束时间    |
-| `location`      | `string`   | 地点        |
-| `accessory_url` | `string`   | 附件        |
+| Name           | Type       | Description |
+| -------------- | ---------- | ----------- |
+| `clubId`       | `int`      | 社团编号    |
+| `name`         | `string`   | 活动名称    |
+| `title`        | `string`   | 活动标题    |
+| `content`      | `string`   | 活动内容    |
+| `startDate`    | `datetime` | 开始时间    |
+| `endDate`      | `datetime` | 结束时间    |
+| `location`     | `string`   | 地点        |
+| `accessoryUrl` | `string`   | 附件        |
 
 #### Example
 
 ```json
 {
-  "club_id": 1,
+  "clubId": 1,
   "name": "act",
   "title": "this is a title",
   "content": "what content",
-  "start_date": "2018-04-19",
-  "end_date": "2018-04-22",
+  "startDate": "2018-04-19",
+  "endDate": "2018-04-22",
   "location": "三区",
-  "accessory_url": "https://xxx/xxx/a.png"
+  "accessoryUrl": "https://xxx/xxx/a.png"
 }
 ```
 
@@ -1340,14 +1343,14 @@ PUT /clubs/activities/:id
 
 #### Input
 
-| Name        | Type       | Description |
-| ----------- | ---------- | ----------- |
-| `name`      | `string`   | 活动名称    |
-| `title`     | `string`   | 活动标题    |
-| `content`   | `string`   | 活动内容    |
-| `star_date` | `datetime` | 开始时间    |
-| `end_date`  | `datetime` | 结束时间    |
-| `location`  | `string`   | 地点        |
+| Name       | Type       | Description |
+| ---------- | ---------- | ----------- |
+| `name`     | `string`   | 活动名称    |
+| `title`    | `string`   | 活动标题    |
+| `content`  | `string`   | 活动内容    |
+| `starDate` | `datetime` | 开始时间    |
+| `endDate`  | `datetime` | 结束时间    |
+| `location` | `string`   | 地点        |
 
 #### Response
 
@@ -1387,10 +1390,10 @@ Status: 200 OK
     "id": 1,
     "title": "活动1",
     "content": "这是内容",
-    "club_name" "文学社",
-    "create_at": "2018-04-19 18:14:12",
-    "img_url": "131231241241.jpg",
-    "avator_url": "e312312312312.jpg"
+    "clubName": "文学社",
+    "createAt": "2018-04-19 18:14:12",
+    "imgUrl": "131231241241.jpg",
+    "avatorUrl": "e312312312312.jpg"
   }
 ]
 total: 100
@@ -1411,17 +1414,17 @@ Status: 200 OK
 {
   "title": "活动1",
   "content": "这是内容",
-  "create_at": "2018-04-19 18:14:12",
+  "createAt": "2018-04-19 18:14:12",
   "remarks": [
     {
       "username": "张三",
       "content": "好玩",
-      "create_at": "2018-04-19 18:14:12"
+      "createAt": "2018-04-19 18:14:12"
     },
     {
       "username": "李四",
       "content": "好玩",
-      "create_at": "2018-04-19 18:14:12"
+      "createAt": "2018-04-19 18:14:12"
     }
   ]
 }
@@ -1461,7 +1464,7 @@ Status: 200 OK
     "id": 1,
     "title": "活动1",
     "content": "这是内容",
-    "create_at": "2018-04-19 18:14:12"
+    "createAt": "2018-04-19 18:14:12"
   }
 ]
 ```
