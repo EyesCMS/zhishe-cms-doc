@@ -442,6 +442,12 @@ Status: 204 No Content
 POST /roles/swtich
 ```
 
+#### Input
+
+| Name     | Type      | Description |
+| -------- | --------- | ----------- |
+| `clubId` | `integer` | 社团 ID     |
+
 #### Response
 
 ```json
