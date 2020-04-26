@@ -739,6 +739,7 @@ POST /clubs/creations
 #### Example
 ```json
 {
+  "id":1,
   "clubName": "test",
   "applicant": "张三",
   "reason": "make friends",
@@ -823,6 +824,7 @@ POST /clubs/dissolution
 
 ```json
 {
+  "id":1,
   "clubId": 10001,
   "applicant": "张三",
   "reason": "没为什么",
@@ -1064,6 +1066,7 @@ Status: 200 OK
 
 [
   {
+    "id":1,
     "club_name": "wangs",
     "oldChiefName": "want",
     "newChiefName": "zhang",
@@ -1071,6 +1074,7 @@ Status: 200 OK
     "state": "pending"
   },
   {
+    "id":2,
     "clubName": "wangs",
     "oldChiefName": "want",
     "newChiefName": "zhang",
@@ -1148,6 +1152,7 @@ Status: 200 OK
 
 [
   {
+    "id":1,
     "clubName": "羽毛球社",
     "applicant": "张三",
     "accessoryUrl": "http://xxx/xxx/xx.doc",
@@ -1155,6 +1160,7 @@ Status: 200 OK
     "state": "pending"
   },
   {
+    "id":2,
     "clubName": "羽毛球社",
     "applicant": "张三",
     "accessoryUrl": "http://xxx/xxx/xx.doc",
