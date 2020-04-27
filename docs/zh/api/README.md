@@ -981,29 +981,32 @@ GET /clubs/:club/joins
 ```json
 Status: 200 OK
 
-[
-  {
-    "id": 1,
-    "applicant": "wangs",
-    "reason": "锻炼自己",
-    "createAt": "2018-04-19 18:14:12",
-    "state": 0
-  },
-  {
-    "id": 2,
-    "applicant": "li",
-    "reason": "锻炼自己",
-    "createAt": "2018-04-19 18:14:12",
-    "state": 1
-  },
-  {
-    "id": 3,
-    "applicant": "zhao",
-    "reason": "锻炼自己",
-    "createAt": "2018-04-19 18:14:12",
-    "state": 2
-  }
-]
+{
+  total_count: 50,
+  items:[
+    {
+      "id": 1,
+      "applicant": "wangs",
+      "reason": "锻炼自己",
+      "createAt": "2018-04-19 18:14:12",
+      "state": 0
+    },
+    {
+      "id": 2,
+      "applicant": "li",
+      "reason": "锻炼自己",
+      "createAt": "2018-04-19 18:14:12",
+      "state": 1
+    },
+    {
+      "id": 3,
+      "applicant": "zhao",
+      "reason": "锻炼自己",
+      "createAt": "2018-04-19 18:14:12",
+      "state": 2
+    }
+  ]
+}
 ```
 
 ### 4.9 审核入社申请
