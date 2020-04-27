@@ -947,7 +947,6 @@ POST /clubs/join
 
 | Name     | Type      | Description |
 | -------- | --------- | ----------- |
-| `userId` | `integer` | 申请人 ID   |
 | `clubId` | `integer` | 社团 ID     |
 | `reason` | `string`  | 申请原因    |
 
@@ -955,7 +954,6 @@ POST /clubs/join
 
 ```json
 {
-  "userId": 10001,
   "clubId": 5000,
   "reason": "没为什么"
 }
@@ -1039,7 +1037,6 @@ POST /clubs/quit
 
 | Name     | Type      | Description |
 | -------- | --------- | ----------- |
-| `userId` | `integer` | 申请人 ID   |
 | `clubId` | `integer` | 社团 ID     |
 | `reason` | `string`  | 申请原因    |
 
