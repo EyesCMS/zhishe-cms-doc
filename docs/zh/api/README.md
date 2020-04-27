@@ -1243,64 +1243,7 @@ PUT /clubs/certifications
 ```json
 Status: 204 No Content
 ```
-### 4.18 社团个人创建申请列表
-用户可查看社团创建申请列表，以进行进一步的审核
-```
-GET /clubs/creations/:id
-```
-#### Response
-```json
-Status: 200 OK
-{
-  "total_count":50,
-  "items":[
-    {
-      "club_name": "羽毛球社",
-      "create_at": "2018-04-19 18:14:12",
-      "applicant": "张三",
-      "reason": "交朋友",
-      "accessory_url": "http://xxx/xxx/xx.doc",
-      "state": "pending"
-    },
-    {
-      "club_name": "篮球社",
-      "create_at": "2018-04-19 18:14:12",
-      "applicant": "张三",
-      "reason": "约球",
-      "accessory_url": "http://xxx/xxx/xx.doc",
-      "state": "active"
-    }
-  ]
-}
-```
-### 4.19 社团个人加入申请列表
-用户可查看社团加入申请列表，以进行进一步的审核
-```
-GET /clubs/join/:id
-```
-#### Response
-```json
-Status: 200 OK
-{
-  "total_count":50,
-  "items":[
-    {
-      "club_name": "羽毛球社",
-      "create_at": "2018-04-19 18:14:12",
-      "applicant": "张三",
-      "reason": "交朋友",
-      "state": "pending"
-    },
-    {
-      "club_name": "篮球社",
-      "create_at": "2018-04-19 18:14:12",
-      "applicant": "张三",
-      "reason": "约球",
-      "state": "active"
-    }
-  ]
-}
-```
+
 ## 5 公告
 
 ### 5.1 发布公告
