@@ -1447,6 +1447,72 @@ DELETE /clubs/activities/:id
 Status: 204 No Content
 ```
 
+### 6.5 获取活动申请列表
+社长可以获取自己社团申请的活动列表
+```
+GET /clubs/:clubId/activities
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+total_count: 50
+items: [
+  {
+    "id": 1,
+    "name": "活动1",
+    "location": "青春广场",
+    "content": "社团团聚",
+    "member_count": "55",
+    "start_date": "2018-04-19 18:14:12",
+    "end_date": "2018-04-19 18:14:12",
+    "state": 0
+  }，
+  {
+    "id": 1,
+    "name": "活动1",
+    "location": "青春广场",
+    "content": "社团团聚",
+    "member_count": "55",
+    "start_date": "2018-04-19 18:14:12",
+    "end_date": "2018-04-19 18:14:12",
+    "state": 1
+  }，
+  {
+    "id": 1,
+    "name": "活动1",
+    "location": "青春广场",
+    "content": "社团团聚",
+    "member_count": "55",
+    "start_date": "2018-04-19 18:14:12",
+    "end_date": "2018-04-19 18:14:12",
+    "state": 2
+  }，
+  {
+    "id": 1,
+    "name": "活动1",
+    "location": "青春广场",
+    "content": "社团团聚",
+    "member_count": "55",
+    "start_date": "2018-04-19 18:14:12",
+    "end_date": "2018-04-19 18:14:12",
+    "state": 3
+  }，
+  {
+    "id": 1,
+    "name": "活动1",
+    "location": "青春广场",
+    "content": "社团团聚",
+    "member_count": "55",
+    "start_date": "2018-04-19 18:14:12",
+    "end_date": "2018-04-19 18:14:12",
+    "state": 4
+  }
+]
+```
+
 ## 7 活动论坛
 
 ### 7.1 帖子列表
