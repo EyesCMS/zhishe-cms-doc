@@ -1356,6 +1356,7 @@ POST /clubs/activities
   "startDate": "2018-04-19",
   "endDate": "2018-04-22",
   "location": "三区",
+  "imgUrl": "https://xxx/xxx/a.png"
   "accessoryUrl": "https://xxx/xxx/a.png"
 }
 ```
