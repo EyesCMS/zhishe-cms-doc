@@ -825,6 +825,29 @@ PUT /clubs/creations/audit
 ```json
 Status: 204 No Content
 ```
+
+### 4.3 学生撤销创建社团申请
+管理员审核某个社团创建申请
+```
+PUT /clubs/creations/revocation
+```
+#### Input
+| Name    | Type      | Description  |
+| ------- | --------- | ------------ |
+| `id`    | `integer` | 申请 ID      |
+| `state` | `integer` | 新的申请状态 |
+#### Example
+```json
+{
+  "id": 1,
+  "state": 1
+}
+```
+#### Response
+```json
+Status: 204 No Content
+```
+
 ### 4.4 提交解散社团申请
 社长提交解散社团申请表单
 ```
