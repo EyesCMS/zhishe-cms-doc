@@ -973,8 +973,8 @@ GET /clubs/:club/joins
 Status: 200 OK
 
 {
-  total_count: 50,
-  items:[
+  "total_count": 50,
+  "items":[
     {
       "id": 1,
       "applicant": "wangs",
@@ -1246,8 +1246,8 @@ GET /clubs/creations/:id
 ```json
 Status: 200 OK
 {
-  total_count:50,
-  items:[
+  "total_count":50,
+  "items":[
     {
       "club_name": "羽毛球社",
       "create_at": "2018-04-19 18:14:12",
@@ -1276,8 +1276,8 @@ GET /clubs/join/:id
 ```json
 Status: 200 OK
 {
-  total_count:50,
-  items:[
+  "total_count":50,
+  "items":[
     {
       "club_name": "羽毛球社",
       "create_at": "2018-04-19 18:14:12",
