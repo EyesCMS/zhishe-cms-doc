@@ -757,12 +757,12 @@ POST /clubs/creations
 #### Input
 | Name            | Type      | Description                               |
 | --------------- | --------- | ----------------------------------------  |
-| `club_name`     | `string`  | 社团名称                                   |
+| `clubName`     | `string`  | 社团名称                                   |
 | `applicant`     | `string`  | 申请人                                     |
 | `reason`        | `string`  | 申请原因                                   |
 | `type`          | `string`  | 社团类型                                   |
-| `official_state`| `boolean` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
-| `accessory_url` | `string`  | 附件                                       |
+| `officialState`| `boolean` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
+| `accessoryUrl` | `string`  | 附件                                       |
 #### Example
 ```json
 {
@@ -1090,7 +1090,7 @@ POST /clubs/leader/change
 
 | Name         | Type      | Description |
 | ------------ | --------- | ----------- |
-| `club_id`    | `integer` | 社团 ID     |
+| `clubId`    | `integer` | 社团 ID     |
 | `oldChiefId` | `integer` | 旧社长 ID   |
 | `newChiefName` | `string` | 新社长姓名   |
 | `reason`     | `string`  | 申请原因    |
