@@ -1092,7 +1092,7 @@ POST /clubs/leader/change
 | ------------ | --------- | ----------- |
 | `club_id`    | `integer` | 社团 ID     |
 | `oldChiefId` | `integer` | 旧社长 ID   |
-| `newChiefId` | `integer` | 新社长 ID   |
+| `newChiefName` | `string` | 新社长姓名   |
 | `reason`     | `string`  | 申请原因    |
 
 #### Response
