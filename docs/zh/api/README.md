@@ -1343,6 +1343,7 @@ POST /clubs/activities
 | `startDate`    | `datetime` | 开始时间    |
 | `endDate`      | `datetime` | 结束时间    |
 | `location`     | `string`   | 地点        |
+| `imgUrl`     | `string`   | 图片        |
 | `accessoryUrl` | `string`   | 附件        |
 
 #### Example
