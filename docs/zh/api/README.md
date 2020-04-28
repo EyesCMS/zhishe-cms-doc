@@ -704,8 +704,13 @@ Status: 200 OK
 {
   "username": "221701300",
   "nickname": "张三",
+  "slogan": '我只是一个测试的',
+  "role": '社员',
+  "major": '数计学院软件工程',
+  "phone": '1231254125',
+  "email": '1195669260@qq.com',
+  "address": '@string',
   "honor": "龙王",
-  "role": "社长",
   "credit": "100",
   "avatarUrl": "https://xxx.com/images/xxxx.png"
 }
