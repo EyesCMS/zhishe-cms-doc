@@ -10,7 +10,7 @@ sidebar: auto
 
 > 本文的正在持续更新中~
 
-[TOC]
+
 
 ## 1 前后端接口规范
 
@@ -787,7 +787,20 @@ Status: 201 Created
 ```
 GET /clubs/creations
 ```
+#### Parameters
+
+以下参数用于组合查询
+
+| 参数名        | 参数类型 | 含义                                                   |
+| ------------- | -------- | ------------------------------------------------------ |
+| applicant     | String   | 申请人                                                 |
+| clubName      | String   | 社团名称                                               |
+| officialState | Integer  | 官方状态: 0 -> 非正式; 1 -> 正式;                      |
+| createAt      | String   | 申请时间                                               |
+| state         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过; |
+
 #### Response
+
 ```json
 Status: 200 OK
 [
