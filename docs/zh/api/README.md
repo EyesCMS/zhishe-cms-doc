@@ -1588,23 +1588,17 @@ GET /forum/posts/:id
 ```json
 Status: 200 OK
 
-
 {
-  "title": "活动1",
-  "content": "这是内容",
-  "createAt": "2018-04-19 18:14:12",
-  "remarks": [
-    {
-      "username": "张三",
-      "content": "好玩",
-      "createAt": "2018-04-19 18:14:12"
-    },
-    {
-      "username": "李四",
-      "content": "好玩",
-      "createAt": "2018-04-19 18:14:12"
+   items:
+   {
+      "id": 1,
+      "title": "活动1",
+      "content": "这是内容",
+      "clubName": XX社,
+      "createAt": "2018-04-19 18:14:12",
+      "imgUrl": "1231231231.jpg",
+      "avatorUrl": "avator_url"
     }
-  ]
 }
 ```
 
@@ -1679,6 +1673,31 @@ POST /forum/posts/:id/remarks
 
 ```json
 Status: 201 Created
+```
+
+### 8.2 某帖子的评论列表
+
+```
+GET /activity/:actId/remarks
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+{
+  items: [
+    {
+      "useId": 1,
+      "nickname": "活动1",
+      "content": "这是内容",
+      "createAt": "2018-04-19 18:14:12",
+      "avatorUrl": "e312312312312.jpg"
+    }
+  ],
+  total_count: 100
+}
 ```
 
 ### 更新用户活跃度（后台自动）
