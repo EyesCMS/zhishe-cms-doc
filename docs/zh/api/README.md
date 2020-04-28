@@ -1117,10 +1117,10 @@ Status: 200 OK
 [
   {
     "id":1,
-    "club_name": "wangs",
+    "clubName": "wangs",
     "oldChiefName": "want",
     "newChiefName": "zhang",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "state": "pending"
   },
   {
