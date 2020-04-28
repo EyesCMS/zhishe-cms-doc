@@ -704,13 +704,8 @@ Status: 200 OK
 {
   "username": "221701300",
   "nickname": "张三",
-  "slogan": '我只是一个测试的',
-  "position": '社员',
-  "major": '数计学院软件工程',
-  "phone": '1231254125',
-  "email": '1195669260@qq.com',
-  "address": '@string',
   "honor": "龙王",
+  "role": "社长",
   "credit": "100",
   "avatarUrl": "https://xxx.com/images/xxxx.png"
 }
@@ -1405,7 +1400,44 @@ POST /clubs/activities
 Status: 201 Created
 ```
 
-### 6.2 活动申请审核
+### 6.2 管理员获取社团活动申请
+
+```
+GET /clubs/activities
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+[
+  {
+    "id": 1,
+    “clubName”:手工部,
+    "name": "act",
+    "title": "this is a title",
+    "content": "what content",
+    "startDate": "2018-04-19",
+    "endDate": "2018-04-22",
+    "location": "三区",
+    "accessoryUrl": "https://xxx/xxx/a.png"
+  },
+  {
+    "id": 2,
+    “clubName”:文艺部,
+    "name": "write",
+    "title": "this is a title",
+    "content": "what content",
+    "startDate": "2018-04-22",
+    "endDate": "2018-05-22",
+    "location": "三区",
+    "accessoryUrl": "https://xxx/xxx/a.png"
+  }
+]
+```
+
+### 6.3 活动申请审核
 
 管理员审核某个社团活动申请
 
@@ -1426,7 +1458,7 @@ PUT /clubs/activities/audit
 Status: 204 No Content
 ```
 
-### 6.3 修改社团活动状态
+### 6.4 修改社团活动状态
 
 社长修改社团活动
 
@@ -1447,7 +1479,7 @@ PUT /clubs/activities/state
 Status: 204 No Content
 ```
 
-### 6.3 修改社团活动
+### 6.5 修改社团活动
 
 社长修改社团活动
 
@@ -1472,7 +1504,7 @@ PUT /clubs/activities/:id
 Status: 204 No Content
 ```
 
-### 6.4 删除某一活动
+### 6.6 删除某一活动
 
 根据活动 ID 删除某一条活动，后端需要获取请求发送方的用户 id，判断他是否拥有待删除活动的权限
 
@@ -1486,7 +1518,7 @@ DELETE /clubs/activities/:id
 Status: 204 No Content
 ```
 
-### 6.5 获取活动申请列表
+### 6.7 获取活动申请列表
 社长可以获取自己社团申请的活动列表
 ```
 GET /clubs/:clubId/activities
