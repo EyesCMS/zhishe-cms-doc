@@ -363,7 +363,7 @@ GET /users/:uid/question
 Status: 200 OK
 
 {
-  "login_problem": "what is your name?"
+  "loginProblem": "what is your name?"
 }
 ```
 
@@ -504,7 +504,6 @@ Status: 200 OK
     "avatar_url": "http://xx/xxxx.png"
   }
 ]
-total: 100
 ```
 
 ### 3.2 查看学生已加入的社团列表
@@ -529,7 +528,6 @@ Status: 200 OK
     "avatar_url": "http://xx/xxxx.png"
   }
 ]
-total: 100
 ```
 ### 3.2 查看学生管理的社团列表
 
@@ -653,8 +651,8 @@ Status: 200 OK
     "create_at": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "交朋友",
-    "accessory_url": "http://xxx/xxx/xx.doc",
-    "state": "pending"
+    "accessoryUrl": "http://xxx/xxx/xx.doc",
+    "state": 0
 }
 ```
 
@@ -673,13 +671,13 @@ Status: 200 OK
 
 [
   {
-    "userid": "20012"
+    "userid": "20012",
     "username": "221701300",
     "nickname": "张三",
     "honor": "龙王",
     "role": "社长",
     "credit": "100",
-    "avatar_url": "https://xxx.com/images/xxxx.png"
+    "avatarUrl": "https://xxx.com/images/xxxx.png"
   }
 ]
 ```
@@ -709,7 +707,7 @@ Status: 200 OK
   "honor": "龙王",
   "role": "社长",
   "credit": "100",
-  "avatar_url": "https://xxx.com/images/xxxx.png"
+  "avatarUrl": "https://xxx.com/images/xxxx.png"
 }
 ```
 
@@ -790,26 +788,26 @@ Status: 200 OK
 [
   {
     "club_name": "羽毛球社",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "交朋友",
-    "accessory_url": "http://xxx/xxx/xx.doc",
+    "accessoryUrl": "http://xxx/xxx/xx.doc",
     "state": "pending"
   },
   {
     "club_name": "篮球社",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "applicant": "李四",
     "reason": "约球",
-    "accessory_url": "http://xxx/xxx/xx.doc",
+    "accessoryUrl": "http://xxx/xxx/xx.doc",
     "state": "active"
   },
    {
     "club_name": "篮球社",
-    "create_at": "2018-04-19 18:14:12",
+    "createAt": "2018-04-19 18:14:12",
     "applicant": "李四",
     "reason": "约球",
-    "accessory_url": "http://xxx/xxx/xx.doc",
+    "accessoryUrl": "http://xxx/xxx/xx.doc",
     "state": "rejected"
   }
 ]
@@ -978,7 +976,7 @@ Status: 200 OK
 
 {
   "total_count": 50,
-  "items":[
+  "items": [
     {
       "id": 1,
       "applicant": "wangs",
@@ -1294,7 +1292,6 @@ Status: 200 OK
     "updateAt": "2018-04-19 19:14:12"
   }
 ]
-total: 100
 ```
 
 ### 5.3 查看公告详情
@@ -1392,7 +1389,7 @@ POST /clubs/activities
   "startDate": "2018-04-19",
   "endDate": "2018-04-22",
   "location": "三区",
-  "imgUrl": "https://xxx/xxx/a.png"
+  "imgUrl": "https://xxx/xxx/a.png",
   "accessoryUrl": "https://xxx/xxx/a.png"
 }
 ```
@@ -1495,8 +1492,7 @@ GET /clubs/:clubId/activities
 ```json
 Status: 200 OK
 
-total_count: 50
-items: [
+[
   {
     "id": 1,
     "name": "活动1",
@@ -1506,45 +1502,45 @@ items: [
     "start_date": "2018-04-19 18:14:12",
     "end_date": "2018-04-19 18:14:12",
     "state": 0
-  }，
+  },
   {
-    "id": 1,
+    "id": 2,
     "name": "活动1",
     "location": "青春广场",
     "content": "社团团聚",
-    "member_count": "55",
-    "start_date": "2018-04-19 18:14:12",
-    "end_date": "2018-04-19 18:14:12",
-    "state": 1
-  }，
-  {
-    "id": 1,
-    "name": "活动1",
-    "location": "青春广场",
-    "content": "社团团聚",
-    "member_count": "55",
-    "start_date": "2018-04-19 18:14:12",
-    "end_date": "2018-04-19 18:14:12",
+    "memberCount": "55",
+    "startDate": "2018-04-19 18:14:12",
+    "endDate": "2018-04-19 18:14:12",
     "state": 2
   }，
   {
-    "id": 1,
+    "id": 3,
     "name": "活动1",
     "location": "青春广场",
     "content": "社团团聚",
-    "member_count": "55",
-    "start_date": "2018-04-19 18:14:12",
-    "end_date": "2018-04-19 18:14:12",
+    "memberCount": "55",
+    "startDate": "2018-04-19 18:14:12",
+    "endDate": "2018-04-19 18:14:12",
+    "state": 2
+  }，
+  {
+    "id": 4,
+    "name": "活动1",
+    "location": "青春广场",
+    "content": "社团团聚",
+    "memberCount": "55",
+    "startDate": "2018-04-19 18:14:12",
+    "endDate": "2018-04-19 18:14:12",
     "state": 3
   }，
   {
-    "id": 1,
+    "id": 5,
     "name": "活动1",
     "location": "青春广场",
     "content": "社团团聚",
-    "member_count": "55",
-    "start_date": "2018-04-19 18:14:12",
-    "end_date": "2018-04-19 18:14:12",
+    "memberCount": "55",
+    "startDate": "2018-04-19 18:14:12",
+    "endDate": "2018-04-19 18:14:12",
     "state": 4
   }
 ]
@@ -1571,10 +1567,9 @@ Status: 200 OK
     "clubName": "文学社",
     "createAt": "2018-04-19 18:14:12",
     "imgUrl": "131231241241.jpg",
-    "avatorUrl": "e312312312312.jpg"
+    "avatafrUrl": "e312312312312.jpg"
   }
 ]
-total: 100
 ```
 
 ### 7.2 查看某一帖子
@@ -1589,16 +1584,13 @@ GET /forum/posts/:id
 Status: 200 OK
 
 {
-   items:
-   {
-      "id": 1,
-      "title": "活动1",
-      "content": "这是内容",
-      "clubName": XX社,
-      "createAt": "2018-04-19 18:14:12",
-      "imgUrl": "1231231231.jpg",
-      "avatorUrl": "avator_url"
-    }
+  "id": 1,
+  "title": "活动1",
+  "content": "这是内容",
+  "clubName": XX社,
+  "createAt": "2018-04-19 18:14:12",
+  "imgUrl": "1231231231.jpg",
+  "avatarUrl": "avator_url"
 }
 ```
 
@@ -1699,10 +1691,10 @@ Status: 200 OK
       "nickname": "活动1",
       "content": "这是内容",
       "createAt": "2018-04-19 18:14:12",
-      "avatorUrl": "e312312312312.jpg"
+      "avatarUrl": "e312312312312.jpg"
     }
   ],
-  total_count: 100
+  totalCount: 100
 }
 ```
 
