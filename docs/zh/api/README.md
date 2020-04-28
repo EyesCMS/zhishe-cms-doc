@@ -1636,7 +1636,10 @@ Status: 200 OK
     "id": 1,
     "title": "活动1",
     "content": "这是内容",
-    "createAt": "2018-04-19 18:14:12"
+    'clubName': 'XX社',
+    "createAt": "2018-04-19 18:14:12",
+    "imgUrl": "123125412.jpg",
+    "avatarUrl": "12312312.jpg"
   }
 ]
 ```
