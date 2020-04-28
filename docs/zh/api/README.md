@@ -1526,7 +1526,7 @@ Status: 204 No Content
 ### 6.7 获取活动申请列表
 社长可以获取自己社团申请的活动列表
 ```
-GET /clubs/:clubId/activities
+GET /clubs/:clubId/activities/apply
 ```
 
 #### Response
