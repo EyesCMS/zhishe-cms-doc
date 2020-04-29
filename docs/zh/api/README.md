@@ -1601,6 +1601,32 @@ Status: 200 OK
 ]
 ```
 
+### 6.8 获取某活动申请详情
+社长可以获取自己社团申请的某一活动的详情
+```
+GET /activities/apply/:id
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+{
+  item: {
+    "id": 5,
+    "title": "标题1"
+    "name": "活动1",
+    "location": "青春广场",
+    "content": "社团团聚",
+    "memberCount": "55",
+    "startDate": "2018-04-19 18:14:12",
+    "endDate": "2018-04-19 18:14:12",
+    "state": 4
+  }
+}
+```
+
 ## 7 活动论坛
 
 ### 7.1 帖子列表
