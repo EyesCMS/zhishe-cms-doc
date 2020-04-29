@@ -1614,17 +1614,20 @@ Status: 200 OK
 
 {
   item: {
-    "id": 5,
-    "title": "标题1"
-    "name": "活动1",
-    "location": "青春广场",
-    "content": "社团团聚",
-    "memberCount": "55",
-    "startDate": "2018-04-19 18:14:12",
-    "endDate": "2018-04-19 18:14:12",
-    "state": 4，
-    "imgUrl": "123123124.jpg"
-  }
+    "id": 1,
+    "clubId": 5000,
+    "name": "act1",
+    "title": "welcome to act1",
+    "body": "this is amazing!",
+    "imgUrl": "https://unsplash.com/photos/tvc5imO5pXk",
+    "starDate": "2020-04-25 23:47:21",
+    "endData": "2020-04-30 23:47:25",
+    "location": "风雨操场",
+    "memberCount": 22,
+    "createAt": "2020-04-25 23:47:46",
+    "handleAt": null,
+    "state": 5
+}
 }
 ```
 
