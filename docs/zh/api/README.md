@@ -1635,6 +1635,14 @@ Status: 200 OK
 GET /forum/posts
 ```
 
+#### Parameters
+
+以下参数区分个人贴和社团活动帖
+
+| 参数名        | 参数类型 | 含义                                     |
+| ------------- | -------- | ---------------------------------------- |
+| `originState` | Integer  | 帖子来源：0 -> 个人帖；1 -> 社团活动帖； |
+
 #### Response
 
 ```json
@@ -1643,12 +1651,12 @@ Status: 200 OK
 [
   {
     "id": 1,
-    "title": "活动1",
+    "posterName": "发帖人",
+    "avatafrUrl": "e312312312312.jpg",
+    "title": "这是一个帖子",
     "content": "这是内容",
-    "clubName": "文学社",
-    "createAt": "2018-04-19 18:14:12",
     "imgUrl": "131231241241.jpg",
-    "avatafrUrl": "e312312312312.jpg"
+    "createAt": "2018-04-19 18:14:12"
   }
 ]
 ```
@@ -1666,12 +1674,12 @@ Status: 200 OK
 
 {
   "id": 1,
-  "title": "活动1",
+  "posterName": "发帖人",
+  "avatafrUrl": "e312312312312.jpg",
+  "title": "这是一个帖子",
   "content": "这是内容",
-  "clubName": XX社,
-  "createAt": "2018-04-19 18:14:12",
-  "imgUrl": "1231231231.jpg",
-  "avatarUrl": "avator_url"
+  "imgUrl": "131231241241.jpg",
+  "createAt": "2018-04-19 18:14:12"
 }
 ```
 
@@ -1699,6 +1707,14 @@ Status: 204 No Content
 GET /forum/:clubId/posts
 ```
 
+#### Parameters
+
+以下参数区分个人贴和社团活动帖
+
+| 参数名        | 参数类型 | 含义                                     |
+| ------------- | -------- | ---------------------------------------- |
+| `originState` | Integer  | 帖子来源：0 -> 个人帖；1 -> 社团活动帖； |
+
 #### Response
 
 ```json
@@ -1709,22 +1725,22 @@ Status: 200 OK
   items:[
     {
       "id": 1,
-      "title": "活动1",
+      "posterName": "发帖人",
+      "avatafrUrl": "e312312312312.jpg",
+      "title": "这是一个帖子",
       "content": "这是内容",
-      "clubName": 'XX社',
-      "createAt": "2018-04-19 18:14:12",
-      "imgUrl": "123125412.jpg",
-      "avatarUrl": "12312312.jpg"
+      "imgUrl": "131231241241.jpg",
+      "createAt": "2018-04-19 18:14:12"
     }
   }
 }
 ```
 
-## 8 活动评论
+## 8 帖子评论
 
 ### 8.1 发表评论
 
-对某一活动帖子发表评论
+对某一帖子发表评论
 
 ```
 POST /forum/posts/:id/remarks
@@ -1757,7 +1773,7 @@ Status: 201 Created
 ### 8.2 某帖子的评论列表
 
 ```
-GET /activity/:actId/remarks
+GET /forum/posts/:id/remarks
 ```
 
 #### Response
