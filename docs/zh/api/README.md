@@ -1622,7 +1622,8 @@ Status: 200 OK
     "memberCount": "55",
     "startDate": "2018-04-19 18:14:12",
     "endDate": "2018-04-19 18:14:12",
-    "state": 4
+    "state": 4，
+    "imgUrl": "123123124.jpg"
   }
 }
 ```
