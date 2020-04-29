@@ -1554,8 +1554,8 @@ Status: 200 OK
     "location": "青春广场",
     "content": "社团团聚",
     "member_count": "55",
-    "start_date": "2018-04-19 18:14:12",
-    "end_date": "2018-04-19 18:14:12",
+    "startDate": "2018-04-19 18:14:12",
+    "endDate": "2018-04-19 18:14:12",
     "state": 0
   },
   {
