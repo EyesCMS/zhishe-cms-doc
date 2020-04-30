@@ -56,7 +56,7 @@ Response
 HTTP/1.1 200 OK
 
 {
-  "total_count": 2525,
+  "totalCount": 2525,
   "items": [
   ...
   ]
@@ -65,7 +65,7 @@ HTTP/1.1 200 OK
 
 **返回参数说明**
 
-响应体里面 `total_count` 表示总数量，`items` 是数组，里面是要查询的元素。
+响应体里面 `totalCount` 表示总数量，`items` 是数组，里面是要查询的元素。
 
 ### 1.2 响应格式
 
@@ -249,26 +249,6 @@ API 支持来自任何来源的 AJAX 请求的跨来源资源共享（CORS）
 
 参考 [https://www.w3.org/TR/cors/](https://www.w3.org/TR/cors/)
 
-### 1.6 API 格式
-
-xx 接口简单描述
-
-```
-
-```
-
-#### Input/Parameters
-
-| Name | Type | Description |
-| :--- | :--- | ----------- |
-|      |      |             |
-
-#### Response
-
-```json
-
-```
-
 
 
 ## 2 用户服务 :hear_no_evil:
@@ -295,6 +275,8 @@ POST /auth/login
   "token": "your secret token"
 }
 ```
+
+
 
 ### 2.2 拉取用户信息
 
@@ -324,6 +306,8 @@ GET /auth/info
 }
 ```
 
+
+
 ### 2.3 注册
 
 用户注册接口
@@ -349,6 +333,8 @@ POST /auth/register
 Status: 201 Created
 ```
 
+
+
 ### 2.4 通过密保问题找回密码
 
 根据用户 ID 获取密保问题
@@ -366,6 +352,8 @@ Status: 200 OK
   "loginProblem": "what is your name?"
 }
 ```
+
+
 
 ### 2.5 校验密保问题
 
@@ -393,6 +381,8 @@ Status: 204 No Content
 ```json
 Status: 403 Forbidden
 ```
+
+
 
 ### 2.6 修改个人信息
 
@@ -458,6 +448,16 @@ Status: 204 No Content
 
 
 
+### 2.8 退出登陆
+
+用户退出登陆
+
+```
+POST /auth/logout
+```
+
+
+
 ## 3 社团管理 :two_men_holding_hands:
 
 ### 3.1 社团推荐列表
@@ -477,100 +477,28 @@ Status: 200 OK
   {
     "cid": 1,
     "name": "篮球社",
-    "chief_id": 2,
-    "chief_name": "微微笑",
-    "avatar_url": "xxxx.png"
+    "chiefId": 2,
+    "chiefName": "微微笑",
+    "avatarUrl": "xxxx.png"
   }
 ]
 ```
 
-### 3.2 查看社团列表
+
+
+### 3.2 社团列表
 
 列出所有社团
 
 ```
-GET /clubs
-```
-
-#### Response
-
-```json
-Status: 200 OK
-
-[
-  {
-    "cid": 1,
-    "name": "篮球社",
-    "chief_id": 2,
-    "chief_name": "微微笑",
-    "avatar_url": "http://xx/xxxx.png"
-  }
-]
-```
-
-### 3.2 查看学生已加入的社团列表
-
-列出学生加入的所有社团
-
-```
-GET /clubs/users/:userid
-```
-
-#### Response
-
-```json
-Status: 200 OK
-
-[
-  {
-    "cid": 1,
-    "name": "篮球社",
-    "chief_id": 2,
-    "chief_name": "微微笑",
-    "avatar_url": "http://xx/xxxx.png"
-  }
-]
-```
-### 3.2 查看学生管理的社团列表
-
-列出学生管理的所有社团，即作为社长的社团列表
-
-```
-GET /clubs/manager/:userid
-```
-
-#### Response
-
-```json
-Status: 200 OK
-
-[
-  {
-    "cid": 1,
-    "name": "篮球社",
-    "chief_id": 2,
-    "chief_name": "微微笑",
-    "avatar_url": "http://xx/xxxx.png"
-  }
-]
-total: 100
-```
-
-### 3.3 按名称关键字查找社团
-
-根据名称关键字查找社团（模糊匹配）
-
-```
-GET /clubs
+GET /clubs?keyword=篮球
 ```
 
 ### **Parameters**
 
-| 参数    | 含义                   |
-| ------- | ---------------------- |
-| keyword | 关键词，用名称模糊查找 |
-
-
+| 参数    | 含义                         |
+| ------- | ---------------------------- |
+| keyword | 可选，关键词，用名称模糊查找 |
 
 #### Response
 
@@ -581,12 +509,43 @@ Status: 200 OK
   {
     "cid": 1,
     "name": "篮球社",
-    "chief_id": 2,
-    "chief_name": "微微笑",
-    "avatar_url": "http://xx/xxxx.png"
+    "chiefName": "微微笑",
+    "avatarUrl": "http://xx/xxxx.png"
   }
 ]
 ```
+
+
+
+### 3.3 某个学生的社团列表（社员/社长）
+
+列出学生加入的所有社团
+
+```
+GET /users/:id/clubs?statue=member
+```
+
+#### Parameter
+
+| 参数名 | 含义                                                   |
+| ------ | ------------------------------------------------------ |
+| statue | 学生在社团身份，可取值为 member（成员），chief（社长） |
+
+#### Response
+
+```json
+Status: 200 OK
+
+[
+  {
+    "id": 1,
+    "name": "篮球社",
+    "chiefName": "微微笑",
+    "avatarUrl": "http://xx/xxxx.png"
+  }
+]
+```
+
 
 ### 3.4 查看某个社团详情
 
@@ -602,23 +561,24 @@ GET /clubs/:id
 Status: 200 OK
 
 {
-  "cid": 2,
+  "id": 2,
   "name": "篮球社",
-  "chief_id": 2,
-  "chief_name": "微微笑",
-  "avatar_url": "http://xx/xxxx.png",
-  "slogan": "XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团XX社是一个非常非常厉害的社团"，
-  "member_count": 500,
-  "qq_group": "312512512"
+  "chiefName": "微微笑",
+  "avatarUrl": "http://xx/xxxx.png",
+  "slogan": "XX社是一个非常非常厉害的社团",
+  "memberCount": 500,
+  "qqGroup": "312512512"
 }
 ```
 
-### 3.4 查看学生加入社团申请
 
-根据学生用户 ID 查找加入社团申请信息
+
+### 3.5 查看学生加入社团申请列表
+
+查看某个学生的加入社团申请列表
 
 ```
-GET /clubs/join/:id
+GET /users/:id/clubs/joins
 ```
 
 #### Response
@@ -626,18 +586,29 @@ GET /clubs/join/:id
 ```json
 Status: 200 OK
 
-{
-  "user_id": 221701XXX,
-  "club_id": 1,
-  "club_name": 篮球社,
-  "reason": "这是申请原因申请原因申请原因",
-  "state": "pending"
-}
+[
+  {
+    "userId": 111,
+    "clubId": 1,
+    "clubName": "篮球社",
+    "reason": "这是申请原因申请原因申请原因",
+    "state": 0
+  },
+  {
+    "userId": 112,
+    "clubId": 1,
+    "clubName": "篮球社",
+    "reason": "这是申请原因申请原因申请原因",
+    "state": 0
+  }
+]
 ```
 
-### 3.4 查看学生创建社团申请
 
-根据学生用户 ID 查找社团申请信息
+
+### 3.6 查看学生创建社团申请列表
+
+查看某个学生的创建社团申请列表
 
 ```
 GET /clubs/creations/:id
@@ -648,22 +619,34 @@ GET /clubs/creations/:id
 ```json
 Status: 200 OK
 
-{
-    "club_name": "羽毛球社",
-    "create_at": "2018-04-19 18:14:12",
+[
+  {
+    "clubName": "羽毛球社",
+    "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "交朋友",
     "accessoryUrl": "http://xxx/xxx/xx.doc",
     "state": 0
-}
+  },
+  {
+    "clubName": "篮球社",
+    "createAt": "2018-04-19 18:14:12",
+    "applicant": "张三",
+    "reason": "交朋友",
+    "accessoryUrl": "http://xxx/xxx/xx.doc",
+    "state": 1
+  }
+]
 ```
 
-### 3.2 社团成员列表
 
-列出所有社团成员
+
+### 3.7 社团成员列表
+
+根据社团 ID 列出社团成员
 
 ```
-GET /clubs/:club/members
+GET /clubs/:id/members
 ```
 
 #### Response
@@ -673,7 +656,7 @@ Status: 200 OK
 
 [
   {
-    "userid": "20012",
+    "userId": "20012",
     "username": "221701300",
     "nickname": "张三",
     "honor": "龙王",
@@ -690,12 +673,14 @@ Status: 200 OK
 Status: 302 Found
 ```
 
-### 3.3 社团成员详细信息
+
+
+### 3.8 社团成员详细信息
 
 查看某个社团成员信息
 
 ```
-GET /clubs/:club/members/:userid
+GET /clubs/:id/members/:userId
 ```
 
 #### Response
@@ -704,7 +689,7 @@ GET /clubs/:club/members/:userid
 Status: 200 OK
 
 {
-  "username": "221701300",
+  "username": "xxx",
   "nickname": "张三",
   "slogan": '我只是一个测试的',
   "role": '社员',
@@ -713,7 +698,7 @@ Status: 200 OK
   "email": '1195669260@qq.com',
   "address": '@string',
   "honor": "龙王",
-  "credit": "100",
+  "credit": 100,
   "avatarUrl": "https://xxx.com/images/xxxx.png"
 }
 ```
@@ -724,16 +709,20 @@ Status: 200 OK
 Status: 302 Found
 ```
 
-### 3.4 添加社团成员
+
+
+### 3.9 添加社团成员
 
 添加社团成员需要学生[手动提交申请](#4.7 学生提交入社申请)，由社长审核后自动加入社团。
 
-### 3.5 删除社团成员
+
+
+### 3.10 删除社团成员
 
 为了删除用户在社团中的成员身份，经过身份验证的用户必须是社团所有者（社长）。
 
 ```
-DELETE /clubs/:club/members/:userid
+DELETE /clubs/:id/members/:userId
 ```
 
 #### Response
@@ -741,6 +730,8 @@ DELETE /clubs/:club/members/:userid
 ```
 Status: 204 No Content
 ```
+
+
 
 ## 4 申请与审核 :page_with_curl:
 
@@ -755,6 +746,7 @@ Status: 204 No Content
 | 2          | rejected，审核被拒绝 |
 
 ### 4.1 提交创建社团申请表单
+
 普通学生提交社团创建申请表单
 ```
 POST /clubs/creations
@@ -771,7 +763,7 @@ POST /clubs/creations
 #### Example
 ```json
 {
-  "id":1,
+  "id": 1,
   "clubName": "test",
   "applicant": "张三",
   "reason": "make friends",
@@ -784,7 +776,10 @@ POST /clubs/creations
 ```json
 Status: 201 Created
 ```
+
+
 ### 4.2 社团创建申请列表
+
 管理员可查看社团创建申请列表，以进行进一步的审核
 ```
 GET /clubs/creations
@@ -793,13 +788,13 @@ GET /clubs/creations
 
 以下参数用于组合查询
 
-| 参数名        | 参数类型 | 含义                                                   |
-| ------------- | -------- | ------------------------------------------------------ |
-| applicant     | String   | 申请人                                                 |
-| clubName      | String   | 社团名称                                               |
-| officialState | Integer  | 官方状态: 0 -> 非正式; 1 -> 正式;                      |
-| createAt      | String   | 申请时间                                               |
-| state         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过; |
+| 参数名          | 参数类型 | 含义                                                   |
+| --------------- | -------- | ------------------------------------------------------ |
+| `applicant`     | String   | 申请人                                                 |
+| `clubName`      | String   | 社团名称                                               |
+| `officialState` | Integer  | 官方状态: 0 -> 非正式; 1 -> 正式;                      |
+| `createAt`      | String   | 申请时间                                               |
+| `state`         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过; |
 
 #### Response
 
@@ -807,32 +802,35 @@ GET /clubs/creations
 Status: 200 OK
 [
   {
-    "club_name": "羽毛球社",
+    "clubName": "羽毛球社",
     "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "交朋友",
     "accessoryUrl": "http://xxx/xxx/xx.doc",
-    "state": "pending"
+    "state": 0
   },
   {
-    "club_name": "篮球社",
+    "clubName": "篮球社",
     "createAt": "2018-04-19 18:14:12",
     "applicant": "李四",
     "reason": "约球",
     "accessoryUrl": "http://xxx/xxx/xx.doc",
-    "state": "active"
+    "state": 1
   },
-   {
-    "club_name": "篮球社",
+  {
+    "clubName": "篮球社",
     "createAt": "2018-04-19 18:14:12",
     "applicant": "李四",
     "reason": "约球",
     "accessoryUrl": "http://xxx/xxx/xx.doc",
-    "state": "rejected"
+    "state": 2
   }
 ]
 ```
+
+
 ### 4.3 审核创建社团申请
+
 管理员审核某个社团创建申请
 ```
 PUT /clubs/creations/audit
@@ -850,21 +848,27 @@ PUT /clubs/creations/audit
 }
 ```
 #### Response
+
 ```json
 Status: 204 No Content
 ```
 
+
+
 ### 4.3 学生撤销创建社团申请
-管理员审核某个社团创建申请
+
+学生撤销某个社团创建申请
 ```
 PUT /clubs/creations/revocation
 ```
 #### Input
+
 | Name    | Type      | Description  |
 | ------- | --------- | ------------ |
 | `id`    | `integer` | 申请 ID      |
 | `state` | `integer` | 新的申请状态 |
 #### Example
+
 ```json
 {
   "id": 1,
@@ -872,11 +876,15 @@ PUT /clubs/creations/revocation
 }
 ```
 #### Response
+
 ```json
 Status: 204 No Content
 ```
 
+
+
 ### 4.4 提交解散社团申请
+
 社长提交解散社团申请表单
 ```
 POST /clubs/dissolution
@@ -903,7 +911,10 @@ POST /clubs/dissolution
 ```json
 Status: 201 Created
 ```
+
+
 ### 4.5 社团解散申请列表
+
 管理员可查看社团解散申请列表，以进行进一步的审核
 ```
 GET /clubs/dissolution
@@ -913,29 +924,32 @@ GET /clubs/dissolution
 Status: 200 OK
 [
   {
-    "club_name": "羽毛球社",
+    "clubName": "羽毛球社",
     "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "本社团没有存在意义",
-    "state": "pending"
+    "state": 0
   },
   {
-    "club_name": "足球社",
+    "clubName": "足球社",
     "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "好无聊啊",
-    "state": "active"
+    "state": 1
   },
   {
-    "club_name": "羽毛球社",
+    "clubName": "羽毛球社",
     "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "无",
-    "state": "rejected"
+    "state": 2
   }
 ]
 ```
+
+
 ### 4.6 审核社团解散申请
+
 管理员审核某个社团解散申请
 ```
 PUT /clubs/dissolution/audit
@@ -956,8 +970,11 @@ PUT /clubs/dissolution/audit
 ```json
 Status: 204 No Content
 ```
+
+
 ### 4.7 学生提交入社申请
-普通学生提交加入社团申请表单
+
+学生提交入社申请表单
 ```
 POST /clubs/join
 ```
@@ -981,12 +998,14 @@ POST /clubs/join
 Status: 201 Created
 ```
 
+
+
 ### 4.8 加入社团申请列表
 
-社长可查看加入社团申请列表，以进行进一步的审核
+社长可查看入社申请列表，以进行进一步的审核
 
 ```
-GET /clubs/:club/joins
+GET /clubs/:id/joins
 ```
 
 #### Response
@@ -994,9 +1013,7 @@ GET /clubs/:club/joins
 ```json
 Status: 200 OK
 
-{
-  "total_count": 50,
-  "items": [
+[
     {
       "id": 1,
       "applicant": "wangs",
@@ -1018,9 +1035,10 @@ Status: 200 OK
       "createAt": "2018-04-19 18:14:12",
       "state": 2
     }
-  ]
-}
+]
 ```
+
+
 
 ### 4.9 审核入社申请
 
@@ -1043,6 +1061,8 @@ PUT /clubs/joins/audit
 Status: 204 No Content
 ```
 
+
+
 ### 4.10 社员提交退社表单
 
 社员提交退出社团表单
@@ -1064,12 +1084,14 @@ POST /clubs/quit
 Status: 201 Created
 ```
 
+
+
 ### 4.11 退社通知列表
 
 社长可查看成员退出社团通知列表
 
 ```
-GET /clubs/:club/quit
+GET /clubs/:id/quit
 ```
 
 #### Response
@@ -1079,22 +1101,19 @@ Status: 200 OK
 
 [
   {
-    "applicant": "wangs",
+    "username": "wangs",
     "reason": "want to go",
     "createAt": "2018-04-19 18:14:12"
   },
   {
-    "applicant": "li",
-    "reason": "want to go",
-    "createAt": "2018-04-19 18:14:12"
-  },
-  {
-    "applicant": "zhao",
+    "username": "li",
     "reason": "want to go",
     "createAt": "2018-04-19 18:14:12"
   }
 ]
 ```
+
+
 
 ### 4.12 社长提交换届申请
 
@@ -1109,7 +1128,6 @@ POST /clubs/leader/change
 | Name         | Type      | Description |
 | ------------ | --------- | ----------- |
 | `clubId`    | `integer` | 社团 ID     |
-| `oldChiefId` | `integer` | 旧社长 ID   |
 | `newChiefName` | `string` | 新社长姓名   |
 | `reason`     | `string`  | 申请原因    |
 
@@ -1118,6 +1136,8 @@ POST /clubs/leader/change
 ```json
 Status: 201 Created
 ```
+
+
 
 ### 4.13 社长换届申请列表
 
@@ -1139,7 +1159,7 @@ Status: 200 OK
     "oldChiefName": "want",
     "newChiefName": "zhang",
     "createAt": "2018-04-19 18:14:12",
-    "state": "pending"
+    "state": 0
   },
   {
     "id":2,
@@ -1147,10 +1167,12 @@ Status: 200 OK
     "oldChiefName": "want",
     "newChiefName": "zhang",
     "createAt": "2018-04-19 18:14:12",
-    "state": "rejected"
+    "state": 2
   }
 ]
 ```
+
+
 
 ### 4.14 换届申请审核
 
@@ -1173,6 +1195,8 @@ PUT /clubs/leader/changes
 Status: 204 No Content
 ```
 
+
+
 ### 4.15 社团认证申请
 
 社长提交社团认证申请表单
@@ -1194,7 +1218,6 @@ POST /clubs/certifications
 ```json
 {
   "clubId": 1,
-  "applicant": "wangping",
   "accessoryUrl": "htttps://xxx/xxx.doc"
 }
 ```
@@ -1204,6 +1227,8 @@ POST /clubs/certifications
 ```json
 Status: 201 Created
 ```
+
+
 
 ### 4.16 社团认证申请列表
 
@@ -1225,7 +1250,7 @@ Status: 200 OK
     "applicant": "张三",
     "accessoryUrl": "http://xxx/xxx/xx.doc",
     "createAt": "2018-04-19 18:14:12",
-    "state": "pending"
+    "state": 0
   },
   {
     "id":2,
@@ -1233,7 +1258,7 @@ Status: 200 OK
     "applicant": "张三",
     "accessoryUrl": "http://xxx/xxx/xx.doc",
     "createAt": "2018-04-19 18:14:12",
-    "state": "rejected"
+    "state": 2
   }
 ]
 ```
@@ -1275,7 +1300,7 @@ POST /clubs/:club/bulletins
 | --------- | -------- | ----------- |
 | `title`   | `string` | 公告标题    |
 | `content` | `string` | 公告内容    |
-| `img_url` | `string` | 公告图片    |
+| `imgUrl`  | `string` | 公告图片    |
 
 #### Example
 
@@ -1292,6 +1317,8 @@ POST /clubs/:club/bulletins
 Status: 201 Created
 ```
 
+
+
 ### 5.2 查看公告列表
 
 ```
@@ -1305,14 +1332,23 @@ Status: 200 OK
 
 [
   {
-    "id": 2,
+    "id": 1,
     "title": "公告1",
+    "content": "这是内容",
+    "createAt": "2018-04-19 18:14:12",
+    "updateAt": "2018-04-19 19:14:12"
+  },
+  {
+    "id": 2,
+    "title": "公告2",
     "content": "这是内容",
     "createAt": "2018-04-19 18:14:12",
     "updateAt": "2018-04-19 19:14:12"
   }
 ]
 ```
+
+
 
 ### 5.3 查看公告详情
 
@@ -1332,6 +1368,8 @@ Status: 200 OK
   "updateAt": "2018-04-19 19:14:12"
 }
 ```
+
+
 
 ### 5.4 修改公告内容
 
@@ -1360,6 +1398,8 @@ PUT /clubs/:club/bulletins/:bulletin_id
 Status: 204 No Content
 ```
 
+
+
 ### 5.5 删除某一条公告
 
 根据公告 ID 删除某一条公告
@@ -1374,9 +1414,11 @@ DELETE /clubs/bulletins/:bulletin_id
 Status: 204 No Content
 ```
 
+
+
 ## 6 活动
 
-活动状态: 0 -> “未审核”; 1 -> "审核通过"; 2 -> "已发布"; 3 -> "审核未通过"; 4 -> "已结束"
+活动状态: 0 -> “未审核”; 1 -> "审核通过"; 2 -> "已发布"; 3 -> "审核未通过"; 4 -> "已结束"; 5 -> "已删除"
 
 ### 6.1 申请活动
 
@@ -1420,6 +1462,8 @@ POST /clubs/activities
 Status: 201 Created
 ```
 
+
+
 ### 6.2 管理员获取社团活动申请
 
 ```
@@ -1457,6 +1501,8 @@ Status: 200 OK
 ]
 ```
 
+
+
 ### 6.3 活动申请审核
 
 管理员审核某个社团活动申请
@@ -1467,16 +1513,18 @@ PUT /clubs/activities/audit
 
 #### Input
 
-| Name       | Type      | Description       |
-| ---------- | --------- | ----------------- |
-| `id`       | `integer` | 申请 ID，不可修改 |
-| `state_id` | `integer` | 活动状态 ID       |
+| Name    | Type      | Description       |
+| ------- | --------- | ----------------- |
+| `id`    | `integer` | 申请 ID，不可修改 |
+| `state` | `integer` | 活动状态          |
 
 #### Response
 
 ```json
 Status: 204 No Content
 ```
+
+
 
 ### 6.4 修改社团活动状态
 
@@ -1488,16 +1536,18 @@ PUT /clubs/activities/state
 
 #### Input
 
-| Name       | Type      | Description       |
-| ---------- | --------- | ----------------- |
-| `id`       | `integer` | 申请 ID，不可修改 |
-| `state_id` | `integer` | 活动状态 ID       |
+| Name    | Type      | Description       |
+| ------- | --------- | ----------------- |
+| `id`    | `integer` | 申请 ID，不可修改 |
+| `state` | `integer` | 活动状态          |
 
 #### Response
 
 ```json
 Status: 204 No Content
 ```
+
+
 
 ### 6.5 修改社团活动
 
@@ -1524,6 +1574,8 @@ PUT /clubs/activities/:id
 Status: 204 No Content
 ```
 
+
+
 ### 6.6 删除某一活动
 
 根据活动 ID 删除某一条活动，后端需要获取请求发送方的用户 id，判断他是否拥有待删除活动的权限
@@ -1538,10 +1590,13 @@ DELETE /clubs/activities/:id
 Status: 204 No Content
 ```
 
+
+
 ### 6.7 获取活动申请列表
+
 社长可以获取自己社团申请的活动列表
 ```
-GET /clubs/:clubId/activities/apply
+GET /clubs/:id/activities/apply
 ```
 
 #### Response
@@ -1555,41 +1610,11 @@ Status: 200 OK
     "name": "活动1",
     "location": "青春广场",
     "content": "社团团聚",
-    "member_count": "55",
+    "memberCount": "55",
     "startDate": "2018-04-19 18:14:12",
     "endDate": "2018-04-19 18:14:12",
     "state": 0
   },
-  {
-    "id": 2,
-    "name": "活动1",
-    "location": "青春广场",
-    "content": "社团团聚",
-    "memberCount": "55",
-    "startDate": "2018-04-19 18:14:12",
-    "endDate": "2018-04-19 18:14:12",
-    "state": 2
-  }，
-  {
-    "id": 3,
-    "name": "活动1",
-    "location": "青春广场",
-    "content": "社团团聚",
-    "memberCount": "55",
-    "startDate": "2018-04-19 18:14:12",
-    "endDate": "2018-04-19 18:14:12",
-    "state": 2
-  }，
-  {
-    "id": 4,
-    "name": "活动1",
-    "location": "青春广场",
-    "content": "社团团聚",
-    "memberCount": "55",
-    "startDate": "2018-04-19 18:14:12",
-    "endDate": "2018-04-19 18:14:12",
-    "state": 3
-  }，
   {
     "id": 5,
     "name": "活动1",
@@ -1603,7 +1628,10 @@ Status: 200 OK
 ]
 ```
 
+
+
 ### 6.8 获取某活动申请详情
+
 社长可以获取自己社团申请的某一活动的详情
 ```
 GET /activities/apply/:id
@@ -1622,7 +1650,7 @@ Status: 200 OK
   "body": "this is amazing!",
   "imgUrl": "https://unsplash.com/photos/tvc5imO5pXk",
   "starDate": "2020-04-25 23:47:21",
-  "endData": "2020-04-30 23:47:25",
+  "endDate": "2020-04-30 23:47:25",
   "location": "风雨操场",
   "memberCount": 22,
   "createAt": "2020-04-25 23:47:46",
@@ -1630,6 +1658,8 @@ Status: 200 OK
   "state": 5
 }
 ```
+
+
 
 ## 7 活动论坛
 
@@ -1665,6 +1695,8 @@ Status: 200 OK
 ]
 ```
 
+
+
 ### 7.2 查看某一帖子
 
 ```
@@ -1687,6 +1719,8 @@ Status: 200 OK
 }
 ```
 
+
+
 ### 7.3 删除一条帖子
 
 只能删除自己发的帖子（逻辑删除，把活动的状态改为 "finished"）
@@ -1701,9 +1735,13 @@ DELETE /forum/posts/:id
 Status: 204 No Content
 ```
 
+
+
 ### 7.4 修改帖子
 
 # TODO
+
+
 
 ### 7.5 获取某一社团的帖子列表
 
@@ -1724,21 +1762,29 @@ GET /forum/:clubId/posts
 ```json
 Status: 200 OK
 
-{
-  total_count: 50,
-  items:[
-    {
-      "id": 1,
-      "posterName": "发帖人",
-      "avatafrUrl": "e312312312312.jpg",
-      "title": "这是一个帖子",
-      "content": "这是内容",
-      "imgUrl": "131231241241.jpg",
-      "createAt": "2018-04-19 18:14:12"
-    }
+[
+  {
+    "id": 1,
+    "posterName": "发帖人",
+    "avatafrUrl": "e312312312312.jpg",
+    "title": "这是一个帖子",
+    "content": "这是内容",
+    "imgUrl": "131231241241.jpg",
+    "createAt": "2018-04-19 18:14:12"
+  },
+  {
+    "id": 2,
+    "posterName": "发帖人",
+    "avatafrUrl": "e312312312312.jpg",
+    "title": "这是一个帖子",
+    "content": "这是内容",
+    "imgUrl": "131231241241.jpg",
+    "createAt": "2018-04-19 18:14:12"
   }
-}
+]
 ```
+
+
 
 ## 8 帖子评论
 
@@ -1774,6 +1820,8 @@ POST /forum/posts/:id/remarks
 Status: 201 Created
 ```
 
+
+
 ### 8.2 某帖子的评论列表
 
 ```
@@ -1798,6 +1846,8 @@ Status: 200 OK
   totalCount: 100
 }
 ```
+
+
 
 ### 更新用户活跃度（后台自动）
 
