@@ -413,6 +413,7 @@ PUT /user/info
 | `address`  | `string` | 地址        |
 | `slogan`   | `string` | 个人标语    |
 | `email`    | `string` | 邮箱        |
+| `avatarUrl`    | `string` | 头像链接   |
 
 #### Example
 
@@ -422,7 +423,8 @@ PUT /user/info
   "nickname": "jack",
   "major": "software",
   "phone": "12345678901",
-  "address": "fujian"
+  "address": "fujian",
+  "avatarUrl": "xxxx.png"
 }
 ```
 
