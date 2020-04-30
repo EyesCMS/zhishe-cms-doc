@@ -1865,24 +1865,30 @@ Status: 200 OK
 对某一帖子发表评论
 
 ```
-POST /forum/posts/:id/remarks
+POST /forum/posts/remarks
 ```
+
+#### Parameters
+
+以下参数区分个人贴和社团活动帖
+
+| 参数名        | 参数类型 | 含义                                               |
+| ------------- | -------- | -------------------------------------------------- |
+| `originState` | Integer  | **必填**；帖子来源：0 -> 个人帖；1 -> 社团活动帖； |
 
 #### Input
 
 | Name      | Type      | Description |
 | --------- | --------- | ----------- |
-| `uid`     | `integer` | 用户 ID     |
-| `pid`     | `integer` | 帖子 ID     |
+| `postId`  | `integer` | 帖子 ID     |
 | `content` | `string`  | 评论内容    |
 
 #### Example
 
 ```json
 {
-  "uid": 1,
-  "pid": 33,
-  "content": "3 days later"
+  "postId": 33,
+  "content": "very good"
 }
 ```
 
@@ -1900,23 +1906,35 @@ Status: 201 Created
 GET /forum/posts/:id/remarks
 ```
 
+#### Parameters
+
+以下参数区分个人贴和社团活动帖
+
+| 参数名        | 参数类型 | 含义                                               |
+| ------------- | -------- | -------------------------------------------------- |
+| `originState` | Integer  | **必填**；帖子来源：0 -> 个人帖；1 -> 社团活动帖； |
+
 #### Response
 
 ```json
 Status: 200 OK
 
-{
-  items: [
-    {
-      "useId": 1,
-      "nickname": "活动1",
-      "content": "这是内容",
-      "createAt": "2018-04-19 18:14:12",
-      "avatarUrl": "e312312312312.jpg"
-    }
-  ],
-  totalCount: 100
-}
+[
+  {
+    "useId": 1,
+    "nickname": "wangp",
+    "avatarUrl": "e312312312312.jpg",
+    "content": "这是内容1",
+    "createAt": "2018-04-19 18:14:12"
+  },
+  {
+    "useId": 1,
+    "nickname": "zhangs",
+    "avatarUrl": "e312312312312.jpg",
+    "content": "这是内容2",
+    "createAt": "2018-04-19 18:14:12"    
+  }
+]
 ```
 
 
