@@ -1613,21 +1613,19 @@ GET /activities/apply/:id
 Status: 200 OK
 
 {
-  item: {
-    "id": 1,
-    "clubId": 5000,
-    "name": "act1",
-    "title": "welcome to act1",
-    "body": "this is amazing!",
-    "imgUrl": "https://unsplash.com/photos/tvc5imO5pXk",
-    "starDate": "2020-04-25 23:47:21",
-    "endData": "2020-04-30 23:47:25",
-    "location": "风雨操场",
-    "memberCount": 22,
-    "createAt": "2020-04-25 23:47:46",
-    "handleAt": null,
-    "state": 5
-}
+  "id": 1,
+  "clubId": 5000,
+  "name": "act1",
+  "title": "welcome to act1",
+  "body": "this is amazing!",
+  "imgUrl": "https://unsplash.com/photos/tvc5imO5pXk",
+  "starDate": "2020-04-25 23:47:21",
+  "endData": "2020-04-30 23:47:25",
+  "location": "风雨操场",
+  "memberCount": 22,
+  "createAt": "2020-04-25 23:47:46",
+  "handleAt": null,
+  "state": 5
 }
 ```
 
