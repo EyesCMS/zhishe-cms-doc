@@ -1457,7 +1457,6 @@ POST /clubs/activities
 | `endDate`      | `datetime` | 结束时间    |
 | `location`     | `string`   | 地点        |
 | `imgUrl`     | `string`   | 图片        |
-| `accessoryUrl` | `string`   | 附件        |
 
 #### Example
 
@@ -1471,7 +1470,6 @@ POST /clubs/activities
   "endDate": "2018-04-22",
   "location": "三区",
   "imgUrl": "https://xxx/xxx/a.png",
-  "accessoryUrl": "https://xxx/xxx/a.png"
 }
 ```
 
@@ -1511,7 +1509,6 @@ Status: 200 OK
     "startDate": "2018-04-19",
     "endDate": "2018-04-22",
     "location": "三区",
-    "accessoryUrl": "https://xxx/xxx/a.png"
     "state": 0
   },
   {
@@ -1523,7 +1520,6 @@ Status: 200 OK
     "startDate": "2018-04-22",
     "endDate": "2018-05-22",
     "location": "三区",
-    "accessoryUrl": "https://xxx/xxx/a.png"
     "state": 0
   }
 ]
