@@ -1353,7 +1353,7 @@ Status: 200 OK
 ### 5.3 查看公告详情
 
 ```
-GET /clubs/:club/bulletins/:bulletin_id
+GET /clubs/:clubId/bulletins/:id
 ```
 
 #### Response
@@ -1374,7 +1374,7 @@ Status: 200 OK
 ### 5.4 修改公告内容
 
 ```
-PUT /clubs/:club/bulletins/:bulletin_id
+PUT /clubs/:clubId/bulletins/:id
 ```
 
 #### Input
@@ -1405,7 +1405,7 @@ Status: 204 No Content
 根据公告 ID 删除某一条公告
 
 ```
-DELETE /clubs/bulletins/:bulletin_id
+DELETE /clubs/bulletins/:id
 ```
 
 #### Response
