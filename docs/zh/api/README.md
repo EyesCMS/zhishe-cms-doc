@@ -389,14 +389,13 @@ Status: 403 Forbidden
 用户修改个人信息
 
 ```
-PUT /user/info
+PUT /users/info
 ```
 
 #### Input
 
 | Name       | Type     | Description |
 | ---------- | -------- | ----------- |
-| `password` | `string` | 密码        |
 | `nickname` | `string` | 昵称        |
 | `major`    | `string` | 专业        |
 | `phone`    | `string` | 联系方式    |
@@ -409,7 +408,6 @@ PUT /user/info
 
 ```json
 {
-  "password": "zxfdsds",
   "nickname": "jack",
   "major": "software",
   "phone": "12345678901",
@@ -456,6 +454,47 @@ Status: 204 No Content
 POST /auth/logout
 ```
 
+### 2.9 修改用户密码
+
+通过验证旧用户密码
+
+```
+POST /auth/password
+```
+#### Input
+
+| Name     | Type      | Description |
+| -------- | --------- | ----------- |
+| `username` | `string` | 用户名     |
+| `oldPassword` | `string` | 旧密码  |
+| `newPassword` | `string` | 新密码  |
+
+#### Response
+
+```json
+Status: 204 No Content
+```
+
+### 2.10 修改用户密码
+
+通过验证旧用户密码
+
+```
+POST /users/password
+```
+#### Input
+
+| Name     | Type      | Description |
+| -------- | --------- | ----------- |
+| `username` | `string` | 用户名     |
+| `password` | `string` | 新密码  |
+| `answer` | `string` | 密保问题答案  |
+
+#### Response
+
+```json
+Status: 204 No Content
+```
 
 
 ## 3 社团管理 :two_men_holding_hands:
