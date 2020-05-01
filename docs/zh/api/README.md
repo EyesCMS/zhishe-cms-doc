@@ -480,7 +480,7 @@ Status: 204 No Content
 忘记密码时通过回答保密问题修改密码
 
 ```
-POST /users/password
+PUT /users/password
 ```
 #### Input
 
