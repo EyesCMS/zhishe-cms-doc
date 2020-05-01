@@ -456,7 +456,7 @@ POST /auth/logout
 
 ### 2.9 修改用户密码
 
-通过验证旧用户密码
+通过验证旧用户密码修改密码
 
 ```
 POST /auth/password
@@ -477,7 +477,7 @@ Status: 204 No Content
 
 ### 2.10 修改用户密码
 
-通过验证旧用户密码
+忘记密码时通过回答保密问题修改密码
 
 ```
 POST /users/password
