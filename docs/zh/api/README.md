@@ -604,6 +604,7 @@ Status: 200 OK
   "chiefName": "微微笑",
   "avatarUrl": "http://xx/xxxx.png",
   "slogan": "XX社是一个非常非常厉害的社团",
+  "type": "运动",
   "memberCount": 500,
   "qqGroup": "312512512"
 }
