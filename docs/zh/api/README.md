@@ -475,9 +475,8 @@ Status: 200 OK
 
 [
   {
-    "cid": 1,
+    "id": 1,
     "name": "篮球社",
-    "chiefId": 2,
     "chiefName": "微微笑",
     "avatarUrl": "xxxx.png"
   }
@@ -507,7 +506,7 @@ Status: 200 OK
 
 [
   {
-    "cid": 1,
+    "id": 1,
     "name": "篮球社",
     "chiefName": "微微笑",
     "avatarUrl": "http://xx/xxxx.png"
@@ -625,7 +624,6 @@ Status: 200 OK
     "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "交朋友",
-    "accessoryUrl": "http://xxx/xxx/xx.doc",
     "state": 0
   },
   {
@@ -633,7 +631,6 @@ Status: 200 OK
     "createAt": "2018-04-19 18:14:12",
     "applicant": "张三",
     "reason": "交朋友",
-    "accessoryUrl": "http://xxx/xxx/xx.doc",
     "state": 1
   }
 ]
