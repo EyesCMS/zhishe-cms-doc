@@ -567,7 +567,7 @@ GET /users/:id/clubs?statue=member
 
 | 参数名 | 含义                                                   |
 | ------ | ------------------------------------------------------ |
-| statue | 学生在社团身份，可取值为 member（成员），chief（社长） |
+| status | 学生在社团身份，可取值为 member（成员），chief（社长） |
 
 #### Response
 
