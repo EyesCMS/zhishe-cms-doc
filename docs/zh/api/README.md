@@ -523,6 +523,7 @@ Status: 200 OK
     "id": 1,
     "name": "篮球社",
     "chiefName": "微微笑",
+    "type": "运动",
     "avatarUrl": "xxxx.png"
   }
 ]
@@ -554,6 +555,7 @@ Status: 200 OK
     "id": 1,
     "name": "篮球社",
     "chiefName": "微微笑",
+    "type": "运动",
     "avatarUrl": "http://xx/xxxx.png"
   }
 ]
@@ -585,6 +587,7 @@ Status: 200 OK
     "id": 1,
     "name": "篮球社",
     "chiefName": "微微笑",
+    "type": "运动",
     "avatarUrl": "http://xx/xxxx.png"
   }
 ]
