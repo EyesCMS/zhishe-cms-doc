@@ -340,8 +340,14 @@ Status: 201 Created
 根据用户 ID 获取密保问题
 
 ```
-GET /users/:uid/question
+GET /users/question
 ```
+
+#### Input
+
+| Name     | Type     | Description    |
+| -------- | -------- | -------------- |
+| `username`    | `string` | 用户名    |
 
 #### Response
 
@@ -360,14 +366,14 @@ Status: 200 OK
 校验密保问题回答是否正确
 
 ```
-POST /users/:uid/anwser
+POST /users/anwser
 ```
 
 #### Input
 
 | Name     | Type     | Description    |
 | -------- | -------- | -------------- |
-| `uid`    | `string` | 用户 ID        |
+| `username`    | `string` | 用户名    |
 | `anwser` | `string` | 待校验密保答案 |
 
 #### Response if answer is correct
