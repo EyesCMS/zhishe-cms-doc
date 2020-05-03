@@ -1539,35 +1539,49 @@ GET /clubs/activities
 | 参数名          | 参数类型 | 含义                                                   |
 | --------------- | -------- | ------------------------------------------------------ |
 | `clubName`      | String   | 社团名称                                               |
-| `state`         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过; |
+| `state`         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 已发布; 3 -> 审核未通过; 4 -> 已结束|
 #### Response
 
 ```json
 Status: 200 OK
 
 [
-  {
-    "id": 1,
-    “clubName”:手工部,
-    "name": "act",
-    "title": "this is a title",
-    "content": "what content",
-    "startDate": "2018-04-19",
-    "endDate": "2018-04-22",
-    "location": "三区",
-    "state": 0
-  },
-  {
-    "id": 2,
-    “clubName”:文艺部,
-    "name": "write",
-    "title": "this is a title",
-    "content": "what content",
-    "startDate": "2018-04-22",
-    "endDate": "2018-05-22",
-    "location": "三区",
-    "state": 0
-  }
+    "totalCount": 3,
+    "items": [
+        {
+            "id": 3,
+            "clubName": "足球社",
+            "name": "act3",
+            "title": "welcome to act3",
+            "content": "this is amazing!",
+            "startDate": "2020-04-25 23:47:21",
+            "endDate": "2020-04-30 23:47:25",
+            "location": "风雨操场",
+            "state": 1
+        },
+        {
+            "id": 4,
+            "clubName": "足球社",
+            "name": "act4",
+            "title": "welcome to act4",
+            "content": "this is amazing!",
+            "startDate": "2020-04-25 23:47:21",
+            "endDate": "2020-04-30 23:47:25",
+            "location": "风雨操场",
+            "state": 1
+        },
+        {
+            "id": 5,
+            "clubName": "软件学社",
+            "name": "act5",
+            "title": "welcome to act5",
+            "content": "this is amazing!",
+            "startDate": "2020-04-25 23:47:21",
+            "endDate": "2020-04-30 23:47:25",
+            "location": "风雨操场",
+            "state": 1
+        }
+    ]
 ]
 ```
 
