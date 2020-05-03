@@ -1689,26 +1689,39 @@ GET /clubs/:id/activities/apply
 Status: 200 OK
 
 [
-  {
-    "id": 1,
-    "name": "活动1",
-    "location": "青春广场",
-    "content": "社团团聚",
-    "memberCount": "55",
-    "startDate": "2018-04-19 18:14:12",
-    "endDate": "2018-04-19 18:14:12",
-    "state": 0
-  },
-  {
-    "id": 5,
-    "name": "活动1",
-    "location": "青春广场",
-    "content": "社团团聚",
-    "memberCount": "55",
-    "startDate": "2018-04-19 18:14:12",
-    "endDate": "2018-04-19 18:14:12",
-    "state": 4
-  }
+    "totalCount": 3,
+    "items": [
+        {
+            "id": 10,
+            "name": "act",
+            "location": "三区",
+            "content": null,
+            "memberCount": null,
+            "startDate": "2018-04-19 00:00:00",
+            "endDate": "2018-04-22 00:00:00",
+            "state": 0
+        },
+        {
+            "id": 7,
+            "name": "act7",
+            "location": "风雨操场",
+            "content": "this is amazing!",
+            "memberCount": 22,
+            "startDate": "2020-04-25 23:47:21",
+            "endDate": "2020-04-30 23:47:25",
+            "state": 2
+        },
+        {
+            "id": 6,
+            "name": "act6",
+            "location": "风雨操场",
+            "content": "this is amazing!",
+            "memberCount": 22,
+            "startDate": "2020-04-25 23:47:21",
+            "endDate": "2020-04-30 23:47:25",
+            "state": 1
+        }
+    ]
 ]
 ```
 
