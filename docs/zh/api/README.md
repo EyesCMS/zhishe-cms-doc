@@ -807,14 +807,14 @@ POST /clubs/creations
 | `clubName`     | `string`  | 社团名称                                   |
 | `reason`        | `string`  | 申请原因                                   |
 | `type`          | `string`  | 社团类型                                   |
-| `officialState`| `boolean` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
+| `officialState`| `integer` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
 #### Example
 ```json
 {
   "clubName": "test",
   "reason": "make friends",
   "type": "运动类",
-  "officialState":true
+  "officialState":1
 }
 ```
 #### Response
