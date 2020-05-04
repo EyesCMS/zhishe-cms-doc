@@ -809,21 +809,16 @@ POST /clubs/creations
 | Name            | Type      | Description                               |
 | --------------- | --------- | ----------------------------------------  |
 | `clubName`     | `string`  | 社团名称                                   |
-| `applicant`     | `string`  | 申请人                                     |
 | `reason`        | `string`  | 申请原因                                   |
 | `type`          | `string`  | 社团类型                                   |
 | `officialState`| `boolean` | 社团官方状态，0 -> 小团体，1 -> 官方认证社团 |
-| `accessoryUrl` | `string`  | 附件                                       |
 #### Example
 ```json
 {
-  "id": 1,
   "clubName": "test",
-  "applicant": "张三",
   "reason": "make friends",
   "type": "运动类",
-  "officialState":true,
-  "accessoryUrl": "https://xxx/xxx/xx.doc"
+  "officialState":true
 }
 ```
 #### Response
@@ -841,11 +836,14 @@ GET /clubs/creations
 #### Parameters
 
 以下参数用于组合查询
+（原则上4.1-4.17接口中的查看列表功能，返回什么字段就可以使用什么字段进行多条件查询,以下不再列出可用于查询的参数列表）
 
 | 参数名          | 参数类型 | 含义                                                   |
 | --------------- | -------- | ------------------------------------------------------ |
+| `id`            | Integer   | 申请id                                                 |
 | `applicant`     | String   | 申请人                                                 |
 | `clubName`      | String   | 社团名称                                               |
+| `reason`        | String   | 申请理由                                               |
 | `officialState` | Integer  | 官方状态: 0 -> 非正式; 1 -> 正式;                      |
 | `createAt`      | String   | 申请时间                                               |
 | `state`         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过; |
@@ -856,27 +854,30 @@ GET /clubs/creations
 Status: 200 OK
 [
   {
-    "clubName": "羽毛球社",
-    "createAt": "2018-04-19 18:14:12",
+    "id": 1,
     "applicant": "张三",
+    "clubName": "羽毛球社",
     "reason": "交朋友",
-    "accessoryUrl": "http://xxx/xxx/xx.doc",
+    "officialState": 1,
+    "createAt": "2018-04-19 18:14:12",
     "state": 0
   },
   {
-    "clubName": "篮球社",
-    "createAt": "2018-04-19 18:14:12",
+    "id": 2,
     "applicant": "李四",
-    "reason": "约球",
-    "accessoryUrl": "http://xxx/xxx/xx.doc",
+    "clubName": "乒乓球社社",
+    "reason": "交朋友",
+    "officialState": 0,
+    "createAt": "2018-04-19 18:14:12",
     "state": 1
   },
   {
+    "id": 3,
+    "applicant": "王五",
     "clubName": "篮球社",
+    "reason": "交朋友",
+    "officialState": 0,
     "createAt": "2018-04-19 18:14:12",
-    "applicant": "李四",
-    "reason": "约球",
-    "accessoryUrl": "http://xxx/xxx/xx.doc",
     "state": 2
   }
 ]
@@ -975,30 +976,28 @@ GET /clubs/dissolution
 ```
 #### Parameters
 
-以下参数用于组合查询
+返回参数都可用于组合查询
 
-| 参数名          | 参数类型 | 含义                                                   |
-| --------------- | -------- | ------------------------------------------------------ |
-| `clubName`      | String   | 社团名称                                               |
-| `createAt`      | String   | 申请时间                                               |
-| `state`         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过; |
 #### Response
 ```json
 Status: 200 OK
 [
   {
+    "id": 1,
     "clubName": "羽毛球社",
     "createAt": "2018-04-19 18:14:12",
     "reason": "本社团没有存在意义",
     "state": 0
   },
   {
+    "id": 2,
     "clubName": "足球社",
     "createAt": "2018-04-19 18:14:12",
     "reason": "好无聊啊",
     "state": 1
   },
   {
+    "id": 3,
     "clubName": "羽毛球社",
     "createAt": "2018-04-19 18:14:12",
     "reason": "无",
@@ -1067,6 +1066,9 @@ Status: 201 Created
 ```
 GET /clubs/:id/joins
 ```
+#### Parameters
+
+返回参数都可用于组合查询
 
 #### Response
 
@@ -1153,6 +1155,9 @@ Status: 201 Created
 ```
 GET /clubs/:id/quit
 ```
+#### Parameters
+
+返回参数都可用于组合查询
 
 #### Response
 
@@ -1208,13 +1213,8 @@ GET /clubs/leader/changes
 ```
 #### Parameters
 
-以下参数用于组合查询
+返回参数都可用于组合查询
 
-| 参数名          | 参数类型 | 含义                                                   |
-| --------------- | -------- | ------------------------------------------------------ |
-| `clubName`      | String   | 社团名称                                               |
-| `createAt`      | String   | 申请时间                                               |
-| `state`         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过; |
 #### Response
 
 ```json
@@ -1306,13 +1306,8 @@ GET /clubs/certifications
 ```
 #### Parameters
 
-以下参数用于组合查询
+返回参数都可用于组合查询
 
-| 参数名          | 参数类型 | 含义                                                   |
-| --------------- | -------- | ------------------------------------------------------ |
-| `clubName`      | String   | 社团名称                                               |
-| `createAt`      | String   | 申请时间                                               |
-| `state`         | Integer  | 申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过; |
 #### Response
 
 ```json
@@ -1323,14 +1318,14 @@ Status: 200 OK
     "id":1,
     "clubName": "羽毛球社",
     "createAt": "2018-04-19 18:14:12",
-    “reason”：“XXX”
+    "reason": "xxx",
     "state": 0
   },
   {
     "id":2,
     "clubName": "羽毛球社",
     "createAt": "2018-04-19 18:14:12",
-    “reason”：“XXX”
+    "reason": "yyy",
     "state": 2
   }
 ]
