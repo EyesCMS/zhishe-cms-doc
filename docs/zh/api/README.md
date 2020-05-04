@@ -644,18 +644,16 @@ Status: 200 OK
 
 [
   {
-    "userId": 111,
-    "clubId": 1,
     "clubName": "篮球社",
+    "createAt": "2018-04-19 18:14:12",
     "reason": "这是申请原因申请原因申请原因",
     "state": 0
   },
   {
-    "userId": 112,
-    "clubId": 1,
     "clubName": "篮球社",
+    "createAt": "2018-04-19 18:13:12",
     "reason": "这是申请原因申请原因申请原因",
-    "state": 0
+    "state": 1
   }
 ]
 ```
@@ -667,7 +665,7 @@ Status: 200 OK
 查看某个学生的创建社团申请列表，state申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过;
 
 ```
-GET /clubs/creations/:id
+GET /users/:id/clubs/creations
 ```
 
 #### Response
@@ -679,14 +677,12 @@ Status: 200 OK
   {
     "clubName": "羽毛球社",
     "createAt": "2018-04-19 18:14:12",
-    "applicant": "张三",
     "reason": "交朋友",
     "state": 0
   },
   {
     "clubName": "篮球社",
     "createAt": "2018-04-19 18:14:12",
-    "applicant": "张三",
     "reason": "交朋友",
     "state": 1
   }
@@ -745,12 +741,12 @@ Status: 200 OK
 {
   "username": "xxx",
   "nickname": "张三",
-  "slogan": '我只是一个测试的',
-  "role": '社员',
-  "major": '数计学院软件工程',
-  "phone": '1231254125',
-  "email": '1195669260@qq.com',
-  "address": '@string',
+  "slogan": "我只是一个测试的",
+  "role": "社员",
+  "major": "数计学院软件工程",
+  "phone": "1231254125",
+  "email": "1195669260@qq.com",
+  "address": "@string",
   "honor": "龙王",
   "credit": 100,
   "avatarUrl": "https://xxx.com/images/xxxx.png"
