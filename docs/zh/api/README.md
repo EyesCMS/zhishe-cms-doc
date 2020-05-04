@@ -634,7 +634,7 @@ Status: 200 OK
 查看某个学生的加入社团申请列表，state申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过;
 
 ```
-GET /users/clubs/joins
+GET /clubs/users/joins
 ```
 
 #### Response
@@ -665,7 +665,7 @@ Status: 200 OK
 查看某个学生的创建社团申请列表，state申请状态：0 -> 未审核; 1 -> 审核通过; 2 -> 审核未通过;
 
 ```
-GET /users/clubs/creations
+GET /clubs/users/creations
 ```
 
 #### Response
