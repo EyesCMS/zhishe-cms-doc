@@ -1659,6 +1659,20 @@ Status: 204 No Content
 GET /clubs/:id/activities/apply
 ```
 
+#### Parameters
+
+以下参数用于组合查询
+
+| 参数名          | 参数类型 | 含义                                                   |
+| --------------- | -------- | ------------------------------------------------------ |
+| `name`            | String  | 活动名称                                                |
+| `title`     | String   | 活动标题                                                 |
+| `content`      | String   | 活动内容                                               |
+| `location`        | String   | 活动地点                                               |
+| `startDate` | String  | 活动开始时间  例如2020-05-01                    |
+| `endDate`      | String   | 活动结束时间 例如2020-05-01                                               |
+
+
 #### Response
 
 ```json
