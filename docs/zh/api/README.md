@@ -1343,6 +1343,31 @@ PUT /clubs/certifications
 ```json
 Status: 204 No Content
 ```
+### 4.18 本社团认证申请列表
+社长查看本社团认证申请状态
+```
+GET /clubs/:clubId/certifications
+```
+
+#### Parameters
+
+该接口不可进行组合查询
+
+#### Response
+```json
+Status: 200 OK
+
+total_count: 50
+items: [
+  {
+    "id": 1,
+    "reason": "书法社",
+    "createAt": "2018-04-19 18:14:12",
+    "state": 0
+  }
+]
+```
+
 
 ## 5 公告
 
