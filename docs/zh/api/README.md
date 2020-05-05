@@ -1810,6 +1810,7 @@ Status: 200 OK
   "content": "这是内容",
   "imgUrl": "131231241241.jpg",
   "createAt": "2018-04-19 18:14:12"
+  "commentCount": "3"
 }
 ```
 
