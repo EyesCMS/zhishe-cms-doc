@@ -333,11 +333,11 @@ Status: 201 Created
 GET /users/question
 ```
 
-#### Input
+#### Parameter
 
-| Name       | Type     | Description |
-| ---------- | -------- | ----------- |
-| `username` | `string` | 用户名      |
+| Name       | Type     | Description      |
+| ---------- | -------- | ---------------- |
+| `username` | `string` | **必填**；用户名 |
 
 #### Response
 
