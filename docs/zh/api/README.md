@@ -526,7 +526,7 @@ Status: 200 OK
 GET /clubs?keyword=篮球
 ```
 
-### **Parameters**
+#### **Parameters**
 
 | 参数    | 含义                                          |
 | ------- | --------------------------------------------- |
@@ -641,6 +641,15 @@ Status: 200 OK
 ```
 GET /clubs/users/creations
 ```
+
+#### Parameters
+
+组合查询参数
+
+| 参数     | 含义                                               |
+| -------- | -------------------------------------------------- |
+| name     | 可选，关键词，用 `username` 或 `nickname` 模糊查找 |
+| honor_id | 可选，头衔 ID                                      |
 
 #### Response
 
