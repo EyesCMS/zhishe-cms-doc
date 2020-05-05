@@ -1915,6 +1915,46 @@ Status: 200 OK
 ]
 ```
 
+
+
+### 7.7 个人帖子列表
+
+查看我的帖子
+
+```
+GET /forum/posts/mine
+```
+
+#### Parameters
+
+组合查询参数
+
+| 参数名     | 参数类型 | 含义                        |
+| ---------- | -------- | --------------------------- |
+| `title`    | string   | 标题                        |
+| `content`  | string   | 内容                        |
+| `createAt` | string   | 发帖日期，形如 `2018-04-19` |
+
+#### Response
+
+```json
+Status: 200 OK
+
+[
+  {
+    "id": 1,
+    "posterName": "发帖人",
+    "avatafrUrl": "e312312312312.jpg",
+    "title": "这是一个帖子",
+    "content": "这是内容",
+    "imgUrl": "131231241241.jpg",
+    "createAt": "2018-04-19 18:14:12"
+  }
+]
+```
+
+
+
 ## 8 帖子评论
 
 ### 8.1 发表评论
