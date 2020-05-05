@@ -1343,7 +1343,7 @@ POST /clubs/:club/bulletins
 | Name      | Type     | Description |
 | --------- | -------- | ----------- |
 | `title`   | `string` | 公告标题    |
-| `content` | `string` | 公告内容    |
+| `body` | `string` | 公告内容    |
 | `imgUrl`  | `string` | 公告图片    |
 
 #### Example
@@ -1351,7 +1351,7 @@ POST /clubs/:club/bulletins
 ```json
 {
   "title": "this is a bulletin",
-  "content": "3 days later"
+  "body": "3 days later"
 }
 ```
 
@@ -1376,14 +1376,14 @@ Status: 200 OK
   {
     "id": 1,
     "title": "公告1",
-    "content": "这是内容",
+    "body": "这是内容",
     "createAt": "2018-04-19 18:14:12",
     "updateAt": "2018-04-19 19:14:12"
   },
   {
     "id": 2,
     "title": "公告2",
-    "content": "这是内容",
+    "body": "这是内容",
     "createAt": "2018-04-19 18:14:12",
     "updateAt": "2018-04-19 19:14:12"
   }
@@ -1403,7 +1403,7 @@ Status: 200 OK
 
 {
   "title": "公告1",
-  "content": "这是内容",
+  "body": "这是内容",
   "createAt": "2018-04-19 18:14:12",
   "updateAt": "2018-04-19 19:14:12"
 }
@@ -1420,13 +1420,13 @@ PUT /clubs/:clubId/bulletins/:id
 | Name      | Type     | Description |
 | --------- | -------- | ----------- |
 | `title`   | `string` | 公告标题    |
-| `content` | `string` | 公告内容    |
+| `body` | `string` | 公告内容    |
 
 #### Example
 
 ```json
 {
-  "content": "更新后的内容"
+  "body": "更新后的内容"
 }
 ```
 
