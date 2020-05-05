@@ -555,7 +555,7 @@ Status: 200 OK
 列出学生加入的所有社团
 
 ```
-GET /users/:id/clubs?status=member
+GET /clubs/users/:id/clubs?status=member
 ```
 
 #### Parameter
