@@ -301,12 +301,12 @@ GET /auth/info
     "slogan": "good good study, day day up",
     "phone": "12345678901",
     "roles": [
-        "normal"
+        "student"
     ]
 }
 ```
 
-
+**注意**： roles 字段只返回 `student` / `admin`
 
 ### 2.3 注册
 
