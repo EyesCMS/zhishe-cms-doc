@@ -1522,8 +1522,8 @@ POST /clubs/activities
   "name": "act",
   "title": "this is a title",
   "content": "what content",
-  "startDate": "2018-04-19",
-  "endDate": "2018-04-22",
+  "startDate": "2018-04-19 20:20:20",
+  "endDate": "2018-04-22 20:20:10",
   "location": "三区",
   "imgUrl": "https://xxx/xxx/a.png"
 }
