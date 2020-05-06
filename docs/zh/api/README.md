@@ -680,7 +680,7 @@ Status: 200 OK
 根据社团 ID 列出社团成员
 
 ```
-GET /clubs/:id/members
+GET /clubs/:clubId/members
 ```
 
 ### **Parameters**
@@ -719,7 +719,7 @@ Status: 302 Found
 查看某个社团成员信息
 
 ```
-GET /clubs/:id/members/:userId
+GET /clubs/:clubId/members/:userId
 ```
 
 #### Response
@@ -757,7 +757,7 @@ Status: 302 Found
 为了删除用户在社团中的成员身份，经过身份验证的用户必须是社团所有者（社长）。
 
 ```
-DELETE /clubs/:id/members/:userId
+DELETE /clubs/:clubId/members/:userId
 ```
 
 #### Response
