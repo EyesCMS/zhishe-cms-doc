@@ -766,6 +766,66 @@ DELETE /clubs/:clubId/members/:userId
 Status: 204 No Content
 ```
 
+### 3.11 修改社团信息
+
+社长修改社团信息
+
+```
+POST /clubs/:clubId/alter/info
+```
+
+#### Input
+
+| Name            | Type      | Description                                  |
+| --------------- | --------- | -------------------------------------------- |
+| `slogan`      | `string`  | 社团简介                                    |
+| `qqGroup`        | `string`  | QQ群号                                    |
+| `type`          | `string`  | 社团类型                                     |
+
+#### Example
+
+```json
+{
+  "slogan": "test",
+  "qqGroup": "112233",
+  "type": "运动",
+}
+```
+
+#### Response
+
+```json
+Status: 200 ok
+```
+
+### 3.12 修改社团头像
+
+社长修改社团头像
+
+```
+POST /clubs/:clubId/alter/pic
+```
+
+#### Input
+
+| Name            | Type      | Description                                  |
+| --------------- | --------- | -------------------------------------------- |
+| `avatarUrl` | `string` | 社团头像                 |
+
+#### Example
+
+```json
+{
+  "avatarUrl": "xxx"
+}
+```
+
+#### Response
+
+```json
+Status: 200 ok
+```
+
 ## 4 申请与审核 :page_with_curl:
 
 这里先统一定义一下申请状态（state）：
