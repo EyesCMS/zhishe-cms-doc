@@ -1515,6 +1515,7 @@ POST /clubs/activities
 | `startDate` | `datetime` | 开始时间    |
 | `endDate`   | `datetime` | 结束时间    |
 | `location`  | `string`   | 地点        |
+| `memberCount`  | `int`   | 参与人数        |
 | `imgUrl`    | `string`   | 图片        |
 
 #### Example
@@ -1528,6 +1529,7 @@ POST /clubs/activities
   "startDate": "2018-04-19 20:20:20",
   "endDate": "2018-04-22 20:20:10",
   "location": "三区",
+  "memberCount": 22,
   "imgUrl": "https://xxx/xxx/a.png"
 }
 ```
