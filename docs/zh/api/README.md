@@ -805,7 +805,7 @@ Status: 204 No Content
 社长修改社团头像
 
 ```
-POST /clubs/:clubId/alter/pic
+PUT /clubs/:clubId/pic
 ```
 
 #### Input
@@ -825,7 +825,7 @@ POST /clubs/:clubId/alter/pic
 #### Response
 
 ```json
-Status: 200 ok
+Status: 204 No Content
 ```
 
 ## 4 申请与审核 :page_with_curl:
