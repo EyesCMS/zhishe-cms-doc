@@ -685,10 +685,10 @@ GET /clubs/:clubId/members
 
 ### **Parameters**
 
-| 参数    | 含义                                          |
-| ------- | --------------------------------------------- |
-| name | 可选，模糊查找昵称或用户名             |
-| honorId    | 可选，通过头衔ID精确查找头衔                     |
+| 参数    | 含义                           |
+| ------- | ------------------------------ |
+| name    | 可选，模糊查找昵称或用户名     |
+| honorId | 可选，通过头衔 ID 精确查找头衔 |
 
 #### Response
 
@@ -778,11 +778,11 @@ PUT /clubs/:clubId/info
 
 均为选填，但至少要有一个非空参数
 
-| Name            | Type      | Description                                  |
-| --------------- | --------- | -------------------------------------------- |
-| `slogan`      | `string`  | 社团简介                                   |
-| `qqGroup`        | `string`  | QQ群号                                    |
-| `type`          | `string`  | 社团类型                                     |
+| Name      | Type     | Description |
+| --------- | -------- | ----------- |
+| `slogan`  | `string` | 社团简介    |
+| `qqGroup` | `string` | QQ 群号     |
+| `type`    | `string` | 社团类型    |
 
 #### Example
 
@@ -810,9 +810,9 @@ POST /clubs/:clubId/alter/pic
 
 #### Input
 
-| Name            | Type      | Description                                  |
-| --------------- | --------- | -------------------------------------------- |
-| `avatarUrl` | `string` | 社团头像                 |
+| Name        | Type     | Description |
+| ----------- | -------- | ----------- |
+| `avatarUrl` | `string` | 社团头像    |
 
 #### Example
 
@@ -1408,8 +1408,11 @@ PUT /clubs/certifications
 ```json
 Status: 204 No Content
 ```
+
 ### 4.18 本社团认证申请列表
+
 社长查看本社团认证申请状态
+
 ```
 GET /clubs/:clubId/certifications
 ```
@@ -1419,6 +1422,7 @@ GET /clubs/:clubId/certifications
 该接口不可进行组合查询
 
 #### Response
+
 ```json
 Status: 200 OK
 
@@ -1433,6 +1437,55 @@ items: [
 ]
 ```
 
+### 4.19 本社换届申请列表
+
+社长查看本社团换届申请状态
+
+```
+GET /clubs/:clubId/leaderChange
+```
+
+#### Parameters
+
+该接口不可进行组合查询
+
+#### Response
+
+```json
+Status: 200 OK
+
+data: {
+    "id": 1,
+    "reason": "书法社",
+    "createAt": "2018-04-19 18:14:12",
+    "state": 0
+  }
+```
+
+### 4.20 本社团解散申请列表
+
+社长查看本社团解散申请状态
+
+```
+GET /clubs/:clubId/dissolution
+```
+
+#### Parameters
+
+该接口不可进行组合查询
+
+#### Response
+
+```json
+Status: 200 OK
+
+data: {
+    "id": 1,
+    "reason": "书法社",
+    "createAt": "2018-04-19 18:14:12",
+    "state": 0
+  }
+```
 
 ## 5 公告
 
@@ -1446,11 +1499,11 @@ POST /clubs/:club/bulletins
 
 #### Input
 
-| Name      | Type     | Description |
-| --------- | -------- | ----------- |
-| `title`   | `string` | 公告标题    |
-| `body` | `string` | 公告内容    |
-| `imgUrl`  | `string` | 公告图片    |
+| Name     | Type     | Description |
+| -------- | -------- | ----------- |
+| `title`  | `string` | 公告标题    |
+| `body`   | `string` | 公告内容    |
+| `imgUrl` | `string` | 公告图片    |
 
 #### Example
 
@@ -1477,10 +1530,10 @@ GET /clubs/:club/bulletins
 
 以下参数用于组合查询
 
-| 参数名     | 参数类型 | 含义                                                                            |
-| ---------- | -------- | ------------------------------------------------------------------------------- |
-| `title` | String   | 公告标题                                                                       |
-| `body`    | String  |    公告内容        |
+| 参数名  | 参数类型 | 含义     |
+| ------- | -------- | -------- |
+| `title` | String   | 公告标题 |
+| `body`  | String   | 公告内容 |
 
 #### Response
 
@@ -1532,10 +1585,10 @@ PUT /clubs/:clubId/bulletins/:id
 
 #### Input
 
-| Name      | Type     | Description |
-| --------- | -------- | ----------- |
-| `title`   | `string` | 公告标题    |
-| `body` | `string` | 公告内容    |
+| Name    | Type     | Description |
+| ------- | -------- | ----------- |
+| `title` | `string` | 公告标题    |
+| `body`  | `string` | 公告内容    |
 
 #### Example
 
@@ -1577,17 +1630,17 @@ POST /clubs/activities
 
 #### Input
 
-| Name        | Type       | Description |
-| ----------- | ---------- | ----------- |
-| `clubId`    | `int`      | 社团编号    |
-| `name`      | `string`   | 活动名称    |
-| `title`     | `string`   | 活动标题    |
-| `content`   | `string`   | 活动内容    |
-| `startDate` | `datetime` | 开始时间    |
-| `endDate`   | `datetime` | 结束时间    |
-| `location`  | `string`   | 地点        |
-| `memberCount`  | `int`   | 参与人数        |
-| `imgUrl`    | `string`   | 图片        |
+| Name          | Type       | Description |
+| ------------- | ---------- | ----------- |
+| `clubId`      | `int`      | 社团编号    |
+| `name`        | `string`   | 活动名称    |
+| `title`       | `string`   | 活动标题    |
+| `content`     | `string`   | 活动内容    |
+| `startDate`   | `datetime` | 开始时间    |
+| `endDate`     | `datetime` | 结束时间    |
+| `location`    | `string`   | 地点        |
+| `memberCount` | `int`      | 参与人数    |
+| `imgUrl`      | `string`   | 图片        |
 
 #### Example
 
@@ -1764,15 +1817,14 @@ GET /clubs/:id/activities/apply
 
 以下参数用于组合查询
 
-| 参数名          | 参数类型 | 含义                                                   |
-| --------------- | -------- | ------------------------------------------------------ |
-| `name`            | String  | 活动名称                                                |
-| `state`     | String   | 活动状态                                                 |
-| `content`      | String   | 活动内容                                               |
-| `location`        | String   | 活动地点                                               |
-| `startDate` | String  | 活动开始时间  例如2020-05-01                    |
-| `endDate`      | String   | 活动结束时间 例如2020-05-01                                               |
-
+| 参数名      | 参数类型 | 含义                         |
+| ----------- | -------- | ---------------------------- |
+| `name`      | String   | 活动名称                     |
+| `state`     | String   | 活动状态                     |
+| `content`   | String   | 活动内容                     |
+| `location`  | String   | 活动地点                     |
+| `startDate` | String   | 活动开始时间 例如 2020-05-01 |
+| `endDate`   | String   | 活动结束时间 例如 2020-05-01 |
 
 #### Response
 
@@ -2017,8 +2069,6 @@ Status: 200 OK
 ]
 ```
 
-
-
 ### 7.7 个人帖子列表
 
 查看我的帖子
@@ -2054,8 +2104,6 @@ Status: 200 OK
   }
 ]
 ```
-
-
 
 ## 8 帖子评论
 
