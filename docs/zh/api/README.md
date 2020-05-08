@@ -771,14 +771,16 @@ Status: 204 No Content
 社长修改社团信息
 
 ```
-POST /clubs/:clubId/alter/info
+PUT /clubs/:clubId/info
 ```
 
 #### Input
 
+均为选填，但至少要有一个非空参数
+
 | Name            | Type      | Description                                  |
 | --------------- | --------- | -------------------------------------------- |
-| `slogan`      | `string`  | 社团简介                                    |
+| `slogan`      | `string`  | 社团简介                                   |
 | `qqGroup`        | `string`  | QQ群号                                    |
 | `type`          | `string`  | 社团类型                                     |
 
@@ -788,14 +790,14 @@ POST /clubs/:clubId/alter/info
 {
   "slogan": "test",
   "qqGroup": "112233",
-  "type": "运动",
+  "type": "运动"
 }
 ```
 
 #### Response
 
 ```json
-Status: 200 ok
+Status: 204 No Content
 ```
 
 ### 3.12 修改社团头像
