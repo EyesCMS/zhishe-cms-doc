@@ -828,6 +828,42 @@ PUT /clubs/:clubId/pic
 Status: 204 No Content
 ```
 
+
+
+### 3.13 修改社团头像（本地上传）
+
+社长修改社团头像
+
+```
+POST /clubs/:clubId/info/avatar
+```
+
+#### Parameter
+
+| Name    | Type            | Description |
+| ------- | --------------- | ----------- |
+| `image` | `multipartFile` | 图片        |
+
+#### Example
+
+```json
+{
+  "image": "头像文件"
+}
+```
+
+#### Response
+
+```json
+Status: 200
+
+{
+  "avatarUrl": "新的的头像链接"
+}
+```
+
+
+
 ## 4 申请与审核 :page_with_curl:
 
 这里先统一定义一下申请状态（state）：
