@@ -2243,3 +2243,64 @@ Status: 200 OK
 ### 更新用户活跃度（后台自动）
 
 ### 更新用户头衔（后台自动）
+
+## 9 管理员首页
+
+### 9.1 待审核事项
+
+```
+GET /admin/unaudited
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+[
+  {
+    "createNumber":1,
+    "dismissNumber":2,
+    "activityNumber":3,
+    "changeNumber":4,
+    "identifyNumber":5
+  }
+]
+```
+
+### 9.2 注册人数
+
+```
+GET /admin/newusers
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+[
+  {
+    "date":[2020-5-1,2020-5-2,2020-5-3,2020-5-4,2020-5-5,2020-5-6,2020-5-7,2020-5-8,2020-5-9,2020-5-10],
+    "newusers":[0,0,100,0,0,31,0,0,73,101]
+  }
+]
+```
+### 9.3 各类别社团数
+
+```
+GET /admin/clubspecies
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+[
+  {
+    "clubspecies":["艺术","运动","学习","休闲","其他"],
+    "clubspeciesNumber":[10,20,5,3,23]
+  }
+]
+```
