@@ -2157,6 +2157,12 @@ POST /users/like
 | ------------- | -------- | ------- |
 | `likedPostId` | BigInt   | 帖子 id |
 
+### Response
+
+```
+Status: 204 No Content
+```
+
 注：若用户重复点赞，返回 `400` 错误
 
 
@@ -2175,7 +2181,40 @@ POST /users/unlike
 | ------------- | -------- | ------- |
 | `likedPostId` | BigInt   | 帖子 id |
 
+### Response
+
+```
+Status: 204 No Content
+```
+
 注：若用户未点赞，返回 `400` 错误
+
+
+
+## 7.10 查看当前用户对某一帖子点赞情况
+
+查看当前用户对某一帖子的点赞情况
+
+```
+POST /users/like
+```
+
+### Parameters
+
+| 参数名   | 参数类型 | 含义    |
+| -------- | -------- | ------- |
+| `postId` | BigInt   | 帖子 id |
+
+### Response
+
+```
+Status: 200
+{
+	"status": 1
+}
+```
+
+注：**0 -> 未点赞，1 -> 已点赞**
 
 
 
