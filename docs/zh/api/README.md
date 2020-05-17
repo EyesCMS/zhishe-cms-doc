@@ -2148,14 +2148,14 @@ Status: 200 OK
 对帖子进行点赞
 
 ```
-GET /users/like
+POST /users/like
 ```
 
 ### Parameters
 
-| 参数名   | 参数类型 | 含义    |
-| -------- | -------- | ------- |
-| `postId` | BigInt   | 帖子 id |
+| 参数名        | 参数类型 | 含义    |
+| ------------- | -------- | ------- |
+| `likedPostId` | BigInt   | 帖子 id |
 
 注：若用户重复点赞，返回 `400` 错误
 
@@ -2166,14 +2166,14 @@ GET /users/like
 对帖子进行点赞
 
 ```
-GET /users/unlike
+POST /users/unlike
 ```
 
 ### Parameters
 
-| 参数名   | 参数类型 | 含义    |
-| -------- | -------- | ------- |
-| `postId` | BigInt   | 帖子 id |
+| 参数名        | 参数类型 | 含义    |
+| ------------- | -------- | ------- |
+| `likedPostId` | BigInt   | 帖子 id |
 
 注：若用户未点赞，返回 `400` 错误
 
