@@ -2343,3 +2343,33 @@ Status: 200 OK
   }
 ]
 ```
+
+## 10 积分
+
+### 10.1 签到获取积分
+
+```
+POST /credit/checkin
+```
+
+#### Input
+
+| Name      | Type      | Description |
+| --------- | --------- | ----------- |
+| `userId`  | `integer` | 用户 ID     |
+| `clubId`  | `integer` | 社团 ID     |
+
+#### Example
+
+```json
+{
+  "userId": 33,
+  "clubId": 33
+}
+```
+#### Response
+
+```json
+Status: 201 Created
+```
+
