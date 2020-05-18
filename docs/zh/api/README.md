@@ -862,7 +862,61 @@ Status: 200
 }
 ```
 
+### 3.14 查看社团走马灯
 
+查看某个社团走马灯图片
+
+```
+GET /clubs/:clubId/pictures
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+{
+  "url1": "链接1",
+  "url2": "链接2",
+  "url3": "链接3",
+  "url4": null,
+  "url5": null
+}
+```
+
+### 3.15 修改社团走马灯（本地上传）
+
+社长修改社团走马灯图片
+
+```
+POST /clubs/:clubId/pictures
+```
+
+#### Parameter
+
+| Name    | Type            | Description |
+| ------- | --------------- | ----------- |
+| `image` | `multipartFile` | 图片        |
+| `index` | `Integer`       | 图片下标（第x张）    |
+
+#### Example
+
+```json
+{
+  "image": "头像文件",
+  "index": "3"
+}
+```
+
+#### Response
+
+```json
+Status: 200
+
+{
+  "pictureUrl": "新的的头像链接"
+}
+```
 
 ## 4 申请与审核 :page_with_curl:
 
