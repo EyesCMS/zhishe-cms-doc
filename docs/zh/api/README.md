@@ -2403,24 +2403,9 @@ Status: 200 OK
 ### 10.1 签到获取积分
 
 ```
-POST /credit/checkin
+POST /credit/:clubId/checkin
 ```
 
-#### Input
-
-| Name      | Type      | Description |
-| --------- | --------- | ----------- |
-| `userId`  | `integer` | 用户 ID     |
-| `clubId`  | `integer` | 社团 ID     |
-
-#### Example
-
-```json
-{
-  "userId": 33,
-  "clubId": 33
-}
-```
 #### Response
 
 ```json
