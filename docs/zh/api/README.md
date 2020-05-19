@@ -2443,4 +2443,26 @@ POST /credit/:clubId/checkin
 ```json
 Status: 201 Created
 ```
+### 10.2 查看签到状态
 
+| 签到状态码 | 描述                  |
+| ---------- | -------------------- |
+| 0          | done，今日已经签到    |
+| 1          | granted，今日可以签到 |
+| 2          | denied，不可签到      |
+
+```
+GET /credit/:clubId/ischeckin
+```
+
+#### Response
+
+```json
+Status: 200 OK
+[
+  {
+    "state": 1,
+    "message":"可以签到"
+  }
+]
+```
