@@ -2078,8 +2078,9 @@ Status: 200 OK
   "title": "这是一个帖子",
   "content": "这是内容",
   "imgUrl": "131231241241.jpg",
-  "createAt": "2018-04-19 18:14:12"
-  "commentCount": "3"
+  "createAt": "2018-04-19 18:14:12",
+  "commentCount": "3",
+  "likeCount": 4
 }
 ```
 
@@ -2171,7 +2172,8 @@ Status: 200 OK
     "title": "这是一个帖子",
     "content": "这是内容",
     "imgUrl": "131231241241.jpg",
-    "createAt": "2018-04-19 18:14:12"
+    "createAt": "2018-04-19 18:14:12",
+    "likeCount" 3
   },
   {
     "id": 2,
@@ -2180,7 +2182,8 @@ Status: 200 OK
     "title": "这是一个帖子",
     "content": "这是内容",
     "imgUrl": "131231241241.jpg",
-    "createAt": "2018-04-19 18:14:12"
+    "createAt": "2018-04-19 18:14:12",
+    "likeCount": 5
   }
 ]
 ```
@@ -2216,7 +2219,8 @@ Status: 200 OK
     "title": "这是一个帖子",
     "content": "这是内容",
     "imgUrl": "131231241241.jpg",
-    "createAt": "2018-04-19 18:14:12"
+    "createAt": "2018-04-19 18:14:12",
+    "likeCount": 4
   }
 ]
 ```
@@ -2358,6 +2362,24 @@ Status: 200 OK
   }
 ]
 ```
+
+
+
+## 8.3 删除某一评论
+
+评论发布者可以删除自己的评论
+
+```
+DELETE /forum/remarks/:id
+```
+
+#### Response
+
+```
+Status: 204 No Content
+```
+
+
 
 ### 更新用户活跃度（后台自动）
 
@@ -2556,3 +2578,4 @@ Status: 200 OK
 ]
 
 ```
+
