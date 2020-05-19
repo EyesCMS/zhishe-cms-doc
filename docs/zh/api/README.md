@@ -902,7 +902,7 @@ POST /clubs/:clubId/pictureUrls
 
 ```json
 {
-  "pictureUrls": "[null,'data1',null,'data2','data3']"
+  "pictureUrls": [null,"data1",null,"data2","data3"]
 }
 ```
 
@@ -930,7 +930,7 @@ POST /clubs/:clubId/pictures
 
 ```json
 {
-  "image": "[null,'data1',null,'data2','data3']"
+  "image": [null,"data1",null,"data2","data3"]
 }
 ```
 
@@ -940,7 +940,7 @@ POST /clubs/:clubId/pictures
 Status: 200
 
 {
-  "url": "[null,'data1',null,'data2','data3']"
+  "url": [null,"data1",null,"data2","data3"]
 }
 ```
 
