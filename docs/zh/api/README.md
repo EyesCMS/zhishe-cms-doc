@@ -2466,3 +2466,42 @@ Status: 200 OK
   }
 ]
 ```
+
+### 10.3 获取用户在某社团的积分和头衔
+
+```
+GET /credit/:clubId/userhonor
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+  {
+    "grade":"冒泡",
+    "score":"6",
+    "precentage":"30%"
+  }
+
+```
+
+
+### 10.4 获取某社团的积分和头衔
+
+```
+GET /credit/:clubId/clubhonor
+```
+
+#### Response
+
+```json
+Status: 200 OK
+
+  {
+    "grade": 1,
+    "score":"6",
+    "precentage":"30%"
+  }
+
+```
