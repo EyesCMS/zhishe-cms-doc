@@ -884,7 +884,35 @@ Status: 200 OK
 }
 ```
 
-### 3.15 修改社团走马灯（本地上传）
+### 3.15 修改社团走马灯（输入url）
+
+社长修改社团走马灯图片
+
+```
+POST /clubs/:clubId/pictureUrls
+```
+
+#### Input
+
+| Name        | Type     | Description |
+| ----------- | -------- | ----------- |
+| `pictureUrls` | `string[]` | 社团走马灯图片    |
+
+#### Example
+
+```json
+{
+  "pictureUrls": "[null,'data1',null,'data2','data3']"
+}
+```
+
+#### Response
+
+```json
+Status: 204 No Content
+```
+
+### 3.16 修改社团走马灯（本地上传）
 
 社长修改社团走马灯图片
 
@@ -896,15 +924,13 @@ POST /clubs/:clubId/pictures
 
 | Name    | Type            | Description |
 | ------- | --------------- | ----------- |
-| `image` | `multipartFile` | 图片        |
-| `index` | `Integer`       | 图片下标（第x张）    |
+| `image` | `multipartFile[]` | 图片        |
 
 #### Example
 
 ```json
 {
-  "image": "头像文件",
-  "index": "3"
+  "image": "[null,'data1',null,'data2','data3']"
 }
 ```
 
@@ -914,7 +940,11 @@ POST /clubs/:clubId/pictures
 Status: 200
 
 {
-  "pictureUrl": "新的的头像链接"
+  "url1": null,
+  "url2": "链接1",
+  "url3": null,
+  "url4": "链接2",
+  "url5": "链接3"
 }
 ```
 
