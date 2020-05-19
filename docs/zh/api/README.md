@@ -940,11 +940,7 @@ POST /clubs/:clubId/pictures
 Status: 200
 
 {
-  "url1": null,
-  "url2": "链接1",
-  "url3": null,
-  "url4": "链接2",
-  "url5": "链接3"
+  "url": "[null,'data1',null,'data2','data3']"
 }
 ```
 
