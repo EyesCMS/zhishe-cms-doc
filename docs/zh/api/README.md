@@ -2510,7 +2510,7 @@ Status: 200 OK
 ### 10.5 获取积分和头衔信息（用户）
 
 ```
-GET /credit/:clubId/userinfo
+GET /credit/userhonor
 ```
 
 #### Response
@@ -2535,7 +2535,7 @@ Status: 200 OK
 ### 10.5 获取积分和头衔信息（社团）
 
 ```
-GET /credit/:clubId/clubinfo
+GET /credit/clubhonor
 ```
 
 #### Response
