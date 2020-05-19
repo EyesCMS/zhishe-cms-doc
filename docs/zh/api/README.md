@@ -2505,3 +2505,54 @@ Status: 200 OK
   }
 
 ```
+
+
+### 10.5 获取积分和头衔信息（用户）
+
+```
+GET /credit/:clubId/userinfo
+```
+
+#### Response
+
+```json
+Status: 200 OK
+[
+  {
+    "grade":"潜水",
+    "lowerlimit":"0",
+    "upperlimit":"20"
+  },
+  {
+    "grade":"冒泡",
+    "lowerlimit":"21",
+    "upperlimit":"40"
+  }
+]
+
+```
+
+### 10.5 获取积分和头衔信息（社团）
+
+```
+GET /credit/:clubId/clubinfo
+```
+
+#### Response
+
+```json
+Status: 200 OK
+[
+  {
+    "grade": 1,
+    "lowerlimit":"0",
+    "upperlimit":"20"
+  },
+  {
+    "grade": 2,
+    "lowerlimit":"21",
+    "upperlimit":"40"
+  }
+]
+
+```
