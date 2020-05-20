@@ -2503,7 +2503,7 @@ Status: 200 OK
   {
     "grade":"冒泡",
     "score":"6",
-    "precentage":"30%"
+    "precentage":"30"
   }
 
 ```
@@ -2523,7 +2523,7 @@ Status: 200 OK
   {
     "grade": 1,
     "score":"6",
-    "precentage":"30%"
+    "precentage":"30"
   }
 
 ```
