@@ -2502,8 +2502,8 @@ Status: 200 OK
 
   {
     "grade":"冒泡",
-    "score":"6",
-    "precentage":"30"
+    "score": 6,
+    "percentage": 30
   }
 
 ```
@@ -2522,8 +2522,8 @@ Status: 200 OK
 
   {
     "grade": 1,
-    "score":"6",
-    "precentage":"30"
+    "score": 6,
+    "percentage": 30
   }
 
 ```
@@ -2542,13 +2542,13 @@ Status: 200 OK
 [
   {
     "grade":"潜水",
-    "lowerlimit":"0",
-    "upperlimit":"20"
+    "lowerlimit": 0,
+    "upperlimit": 20
   },
   {
     "grade":"冒泡",
-    "lowerlimit":"21",
-    "upperlimit":"40"
+    "lowerlimit": 21,
+    "upperlimit": 40
   }
 ]
 
@@ -2567,13 +2567,13 @@ Status: 200 OK
 [
   {
     "grade": 1,
-    "lowerlimit":"0",
-    "upperlimit":"20"
+    "lowerlimit": 0,
+    "upperlimit": 20
   },
   {
     "grade": 2,
-    "lowerlimit":"21",
-    "upperlimit":"40"
+    "lowerlimit": 21,
+    "upperlimit": 40
   }
 ]
 
