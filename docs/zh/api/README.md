@@ -884,35 +884,8 @@ Status: 200 OK
 ]
 ```
 
-### 3.15 修改社团走马灯（输入url）（暂未启用）
 
-社长修改社团走马灯图片
-
-```
-POST /clubs/:clubId/pictureUrls
-```
-
-#### Input
-
-| Name        | Type     | Description |
-| ----------- | -------- | ----------- |
-| `pictureUrls` | `string[]` | 社团走马灯图片    |
-
-#### Example
-
-```json
-{
-  "pictureUrls": [null,"data1",null,"data2","data3"]
-}
-```
-
-#### Response
-
-```json
-Status: 204 No Content
-```
-
-### 3.16 修改社团走马灯（本地上传）
+### 3.15 修改社团走马灯（本地上传）
 
 社长修改社团走马灯图片
 
