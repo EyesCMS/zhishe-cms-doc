@@ -516,7 +516,8 @@ Status: 200 OK
     "chiefName": "微微笑",
     "type": "运动",
     "state":"1",
-    "avatarUrl": "xxxx.png"
+    "avatarUrl": "xxxx.png",
+    "joinState": "已加入"
   }
 ]
 ```
@@ -549,7 +550,8 @@ Status: 200 OK
     "chiefName": "微微笑",
     "type": "运动",
     "state":"1",
-    "avatarUrl": "http://xx/xxxx.png"
+    "avatarUrl": "http://xx/xxxx.png",
+    "joinState": "未加入"
   }
 ]
 ```
