@@ -1709,7 +1709,7 @@ POST /clubs/activities
 | `endDate`     | `datetime` | 结束时间    |
 | `location`    | `string`   | 地点        |
 | `memberCount` | `int`      | 参与人数    |
-| `imgUrl`      | `string`   | 图片        |
+| `imgUrl`      | `multipartFile`   | 图片        |
 
 #### Example
 
