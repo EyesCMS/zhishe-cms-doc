@@ -2323,7 +2323,7 @@ Status: 200 OK
 评论发布者可以删除自己的评论
 
 ```
-DELETE /forum/remarks/:id
+DELETE /forum/posts/remarks/:id
 ```
 
 #### Response
