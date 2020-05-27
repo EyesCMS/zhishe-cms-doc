@@ -2057,15 +2057,13 @@ Status: 204 No Content
 POST /forum/posts
 ```
 
-#### Input
+#### Parameter
 
-```json
-{
-  "title": "这是一个帖子",
-  "content": "这是内容",
-  "imgUrl": "这是图片路径"
-}
-```
+| 参数名    | 参数类型      | 含义     |
+| --------- | ------------- | -------- |
+| `title`   | string        | 帖子标题 |
+| `content` | string        | 帖子内容 |
+| `image`   | MultipartFile | 图片     |
 
 #### Response
 
