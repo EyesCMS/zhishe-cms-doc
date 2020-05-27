@@ -416,31 +416,7 @@ PUT /users/info
 Status: 204 No Content
 ```
 
-### 2.7 切换角色（不要用）
 
-用户点击某个社团后，传递当前社团 ID 给后端，后端根据社团 ID 设置当前用户角色
-
-```
-POST /roles/swtich?type=0
-```
-
-#### Parameter
-
-| Name   | Type      | Description                                        |
-| ------ | --------- | -------------------------------------------------- |
-| `type` | `integer` | 切换方向：0 -> 用户中心到社团；1 -> 社团中心到用户 |
-
-#### Input
-
-| Name     | Type      | Description |
-| -------- | --------- | ----------- |
-| `clubId` | `integer` | 社团 ID     |
-
-#### Response
-
-```json
-Status: 204 No Content
-```
 
 ### 2.8 退出登陆
 
@@ -2209,7 +2185,7 @@ Status: 200 OK
 对帖子进行点赞
 
 ```
-POST /users/like
+POST /forum/like
 ```
 
 ### Parameters
@@ -2233,7 +2209,7 @@ Status: 204 No Content
 对帖子进行点赞
 
 ```
-POST /users/unlike
+POST /forum/unlike
 ```
 
 ### Parameters
@@ -2257,7 +2233,7 @@ Status: 204 No Content
 查看当前用户对某一帖子的点赞情况
 
 ```
-POST /users/like
+GET /forum/like
 ```
 
 ### Parameters
