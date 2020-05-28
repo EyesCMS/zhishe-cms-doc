@@ -493,7 +493,8 @@ Status: 200 OK
     "type": "运动",
     "state":"1",
     "avatarUrl": "xxxx.png",
-    "joinState": "已加入"
+    "joinState": "已加入",
+    "role": "社长"
   }
 ]
 ```
@@ -527,7 +528,8 @@ Status: 200 OK
     "type": "运动",
     "state":"1",
     "avatarUrl": "http://xx/xxxx.png",
-    "joinState": "未加入"
+    "joinState": "未加入",
+    "role": "无"
   }
 ]
 ```
@@ -558,7 +560,9 @@ Status: 200 OK
     "chiefName": "微微笑",
     "type": "运动",
     "state":"1",
-    "avatarUrl": "http://xx/xxxx.png"
+    "avatarUrl": "http://xx/xxxx.png",
+    "joinState": "已加入",
+    "role": "社长"
   }
 ]
 ```
@@ -580,9 +584,12 @@ Status: 200 OK
   "id": 2,
   "name": "篮球社",
   "chiefName": "微微笑",
-  "avatarUrl": "http://xx/xxxx.png",
-  "slogan": "XX社是一个非常非常厉害的社团",
   "type": "运动",
+  "state": "1",
+  "avatarUrl": "http://xx/xxxx.png",
+  "joinState": "已加入",
+  "role": "社长",
+  "slogan": "XX社是一个非常非常厉害的社团",
   "memberCount": 500,
   "qqGroup": "312512512"
 }
