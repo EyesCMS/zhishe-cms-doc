@@ -1997,6 +1997,37 @@ Status: 200 OK
 }
 ```
 
+### 6.9 获取某活动帖推荐列表
+
+| 参数名      | 参数类型 | 含义                         |
+| ----------- | -------- | ---------------------------- |
+| `number`      | Integer   | 获取推荐数量             |
+
+注：默认获取十条，图片地址可能为空
+
+```
+GET /activities/recommended
+```
+#### Response
+
+```json
+Status: 200 OK
+[
+    {
+        "id": 56,
+        "imgUrl": ""
+    },
+    {
+        "id": 4,
+        "imgUrl": "https://images.unsplash.com/photo-1556035511-3168381ea4d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
+    },
+    {
+        "id": 55,
+        "imgUrl": ""
+    }
+]
+
+
 ## 7 活动论坛
 
 ### 7.1 帖子列表
