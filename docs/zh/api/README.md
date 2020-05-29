@@ -316,10 +316,8 @@ POST /auth/register
 | ---------- | -------- | ----------- |
 | `username` | `string` | 用户名      |
 | `password` | `string` | 密码        |
-| `slogan`   | `string` | 个性签名    |
-| `major`    | `string` | 专业        |
-| `phone`    | `string` | 联系方式    |
-| `address`  | `string` | 宿舍地址    |
+| `emaill`   | `string` | 邮箱        |
+| `authCode` | `string` | 邮箱验证码  |
 
 #### Response
 
@@ -469,6 +467,31 @@ PUT /users/password
 ```json
 Status: 204 No Content
 ```
+
+
+
+## 2.11 获取邮箱验证码
+
+```
+GET /auth/authCode
+```
+
+### Parameter
+
+| Name    | Type     | Description    |
+| ------- | -------- | -------------- |
+| `email` | `string` | **必填**. 邮箱 |
+
+#### Response
+
+```
+Status: 200 OK
+{
+	"message":  "获取验证码成功"
+}
+```
+
+
 
 ## 3 社团管理 :two_men_holding_hands:
 
