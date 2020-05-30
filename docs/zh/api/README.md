@@ -1972,7 +1972,7 @@ Status: 200 OK
 社长可以获取自己社团申请的某一活动的详情
 
 ```
-GET /activities/apply/:id
+GET /clubs/activities/apply/:id
 ```
 
 #### Response
@@ -2006,7 +2006,7 @@ Status: 200 OK
 注：默认获取十条，图片地址可能为空
 
 ```
-GET /activities/recommended
+GET /clubs/activities/recommended
 ```
 #### Response
 
